@@ -1,0 +1,143 @@
+@import url('https://fonts.googleapis.com/css2?family=Marcellus&display=swap');
+        *{
+            margin: 0;
+            padding: 0;
+            cursor: none;
+        }
+        .cursor{
+            position: fixed;
+            pointer-events: none;
+            width: 5vw;
+            height: 10vh;
+            background: radial-gradient(circle, rgba(255, 255, 255, 0.432) 0%, rgba(255,255,255,0) 80%);
+            border-radius: 50%;
+            transform: translate(-50%, -50%);
+            mix-blend-mode: lighten;
+            z-index: 9999;
+            transition: background 0.3s ease;
+        }
+        .nav{
+            height: 13vh;
+        }
+        .normal{
+            display: flex;
+            list-style-type: none;
+            overflow: hidden;
+            background-color: black;
+            position: fixed;
+            top: 0;
+            width: 100vw;
+            height: 13vh;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .normal img{
+            width: 5vw;
+            height: auto;
+            padding-left: 5vw;
+        }
+        #links{
+            display: flex;
+            flex-direction: row;
+            gap: 3vw;
+            padding-right: 5vw;
+        }
+        li a{
+            color: white;
+            text-align: center;
+            font-family: "Marcellus", serif;
+            font-size: 27px;
+            text-decoration: none;
+            
+        }
+        .underline-ani {
+            display: inline-block;
+            position: relative;
+        }
+        .underline-ani::after {
+            content: '';
+            position: absolute;
+            width: 100%;
+            transform: scaleX(0);
+            height: 2px;
+            bottom: 0;
+            left: 0;
+            background-color: #ffffff;
+            transition: transform 0.3s ease-out;
+        }
+        .underline-ani:hover::after {
+            transform: scaleX(1);
+        }
+        .hamburger{
+            position: fixed;
+            font: black;
+            top: 0; 
+            right: 0;
+            height: 100vh;
+            width: 100vw;
+            background-color: rgba(0, 0, 0, 0.6);
+            backdrop-filter: blur(12px);
+            list-style: none;
+            display: none;
+            flex-direction: column;
+            align-items: center;
+            justify-content: space-evenly;
+        }
+        .humburger li{
+            width: 100%;
+            }
+        .humburger a{
+            width: 100%;
+        }
+        .menu-button{
+            display: none;
+        }
+        .update { 
+            font-family: "Marcellus", serif;
+            font-size: 0.9vw;
+            text-align: center;
+            outline-style: solid; 
+            outline-width: 2px;
+            outline-color: black;
+            padding: 10px;
+        }
+        @media (max-width: 1100px) {
+            .normal img{
+                width: 10vw;
+            }
+        }
+        @media (max-width: 1088px) {
+            .size-40{
+                font-size: 4vw;
+            }
+            .normal img{
+                width: 8vw;
+            }
+            .hideOnMobile {
+                display: none;
+            }
+            .menu-button {
+                display: block;
+            }
+        }
+        @media (max-width: 600px) {
+            .normal{
+                height: 9vh;
+            }
+            .normal img{
+                width: 13vw;
+                padding-left: 5vw;
+            }
+            .size-40{
+                font-size: 8.5vw;
+            }
+            #links{
+                padding-right: 5vw;
+            }
+            .update{
+                font-size: 3.5vw;
+            }
+            .nav{
+                height: 9vh;
+            }
+        }
