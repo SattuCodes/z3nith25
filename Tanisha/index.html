@@ -10,7 +10,7 @@
 <body>
     <div class="cursor"></div>
     <div class="nav">
-        <ul class="normal">
+        <ul class="normal-nav">
             <a href="#"><img src="assets/logowhite.png" alt=""></a>
             <div id="links">
                 <li class="underline-ani hideOnMobile"><a href="#home">Home</a></li>
@@ -32,16 +32,7 @@
             <li><a href="#" class="underline-ani">The Treasury</a></li>
         </ul>
     </div>
-    <div class="update">Registration for Z3NITH'25 are open <a href='#Register' style="color: black;">Register Now</a>&nbsp;&nbsp;❯</div>
-
-
-
-
-
-
-
-
-
+    <div class="update-bar">Registration for Z3NITH'25 are open <a href='#Register' style="color: #fce2ff; background: none; font-weight:bold;">REGISTER NOW</a>&nbsp;&nbsp;❯</div>
 
 
 
@@ -60,19 +51,71 @@
             flashlight.style.left = `${e.clientX}px`;
             flashlight.style.top = `${e.clientY}px`;
         });
-
-
-
-
-
-
-
-
-
-
-
-
-
     </script>
+    
+
+
+    <!-- COUNTDOWN START -->
+    <div class="countdown">
+    <table id="countdown">
+        <tr id="countdown-timer">
+            <td><span id="days">x</span> </td>
+            <td><span id="hours">x</span> </td>
+            <td><span id="minutes">x</span> </td>
+            <td><span id="seconds">x</span> </td>
+        </tr>
+        <tr id="countdown-labels">
+            <td id="label"><span>Days</span> </td>
+            <td id="label"><span>Hours</span> </td>
+            <td id="label"><span>Minutes</span> </td>
+            <td id="label"><span>Seconds</span> </td>
+        </tr>
+        
+    </table>
+
+    <script>
+ 
+        const zenithOpening= new Date('jun 21, 2025 00:00:00');
+        
+        // run function at 1s intervals
+        setInterval(() => {
+            setCountdown(zenithOpening);
+        }, 1000);
+
+        function setCountdown(countingDownTime) {
+             
+            let now = new Date();
+
+            let timeRemainign = countingDownTime - now;
+
+            // console.log(timeRemainign);
+
+            let seconds = Math.floor(timeRemainign/1000);
+            let minutes= Math.floor(timeRemainign/(1000*60));
+            let hours = Math.floor(timeRemainign/ (1000*60*60));
+            let days = Math.floor(timeRemainign/ (1000*60*60*24));
+
+            // console.log(days,hours,minutes, seconds); 
+
+            let daysToDisplay = days;
+            let hoursToDisplay = hours - (days * 24);
+            let minutesToDisplay = minutes - (hours * 60);
+            let secondsToDisplay = seconds - (minutes*60);
+
+            console.log(daysToDisplay, hoursToDisplay, minutesToDisplay, secondsToDisplay);
+
+            const days1 = document.getElementById('days');
+            const hours1 = document.getElementById('hours');
+            const minutes1 = document.getElementById('minutes');
+            const seconds1 = document.getElementById('seconds');
+            
+            days1.textContent= daysToDisplay;
+            hours1.textContent= hoursToDisplay;
+            minutes1.textContent= minutesToDisplay;
+            seconds1.textContent= secondsToDisplay;
+        }
+    </script>
+    </div>
+    <!-- COUNTDOWN END -->
 </body>
 </html>
