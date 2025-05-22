@@ -9,7 +9,8 @@
 </head>
 <body>
     <div class="cursor"></div>
-    <div class="nav">
+    <!-- NAVBAR START -->
+    <section class="nav">
         <ul class="normal-nav">
             <a href="#"><img src="assets/logowhite.png" alt=""></a>
             <div id="links">
@@ -31,9 +32,8 @@
             <li><a href="#" class="underline-ani">Videos</a></li>
             <li><a href="#" class="underline-ani">The Treasury</a></li>
         </ul>
-    </div>
-    <div class="update-bar">Registration for Z3NITH'25 are open <a href='#Register' style="color: wheat; background: none; font-weight: bold;">Register Now</a>&nbsp;&nbsp;<span style="color:wheat; background-color: #48192E;">❯</span></div>
-
+    </section>
+    
     <script>
         function showSidebar(){
             const sidebar = document.querySelector('.hamburger')
@@ -50,23 +50,42 @@
             flashlight.style.top = `${e.clientY}px`;
         });
     </script>
-    
+    <!-- NAVBAR END -->
 
+    <!-- HERO START -->
+    <section class="hero-section" style="background-image: url(assets/bg1.png);">
+        
+        <div class="update-bar">Registration for Z3NITH'25 are open <a href='#Register' style="color: wheat; background: none; font-weight: bold;">Register Now</a>&nbsp;&nbsp;<span style="color:wheat; background-color: #48192E;">❯</span></div>
+        <div class="hero">
+            <img src="assets/lgo.png" style="height: 50vh; width: auto; padding: 2rem;"/>
+            <p class="tag">Home. Sweet. Rome.</p>
+            <div class="button">
+                <button id="buttons">Brochure</button>
+                <button id="buttons">Trailer</button>
+            </div>
+        </div>
+        
+    </section>
+    <!-- HERO END -->
+    <div class="transition"></div>
 
     <!-- COUNTDOWN START -->
-    <div class="countdown">
+    <section class="countdown">
+    <div class="3d">
+        x
+    </div>
     <table id="countdown">
         <tr id="countdown-timer">
-            <td><span id="days">x</span> </td>
-            <td><span id="hours">x</span> </td>
-            <td><span id="minutes">x</span> </td>
-            <td><span id="seconds">x</span> </td>
+            <td><span id="days">x</span>:</td>
+            <td><span id="hours">x</span>:</td>
+            <td><span id="minutes">x</span>:</td>
+            <td><span id="seconds">x</span></td>
         </tr>
         <tr id="countdown-labels">
-            <td id="label"><span>Days</span> </td>
-            <td id="label"><span>Hours</span> </td>
-            <td id="label"><span>Minutes</span> </td>
-            <td id="label"><span>Seconds</span> </td>
+            <td id="label"><span>days</span> </td>
+            <td id="label"><span>hours</span> </td>
+            <td id="label"><span>minutes</span> </td>
+            <td id="label"><span>seconds</span></td>
         </tr>
         
     </table>
@@ -78,6 +97,33 @@
         setInterval(() => {
             setCountdown(zenithOpening);
         }, 1000);
+
+        function toRoman(num) {
+                const romanMap = [
+                    { val: 1000, sym: 'M' },
+                    { val: 900, sym: 'CM' },
+                    { val: 500, sym: 'D' },
+                    { val: 400, sym: 'CD' },
+                    { val: 100, sym: 'C' },
+                    { val: 90, sym: 'XC' },
+                    { val: 50, sym: 'L' },
+                    { val: 40, sym: 'XL' },
+                    { val: 10, sym: 'X' },
+                    { val: 9, sym: 'IX' },
+                    { val: 5, sym: 'V' },
+                    { val: 4, sym: 'IV' },
+                    { val: 1, sym: 'I' }
+                ];
+
+                let result = '';
+                for (const { val, sym } of romanMap) {
+                    while (num >= val) {
+                        result += sym;
+                        num -= val;
+                    }
+                }
+                return result || 'LX';
+            }
 
         function setCountdown(countingDownTime) {
              
@@ -106,13 +152,29 @@
             const minutes1 = document.getElementById('minutes');
             const seconds1 = document.getElementById('seconds');
             
-            days1.textContent= daysToDisplay;
-            hours1.textContent= hoursToDisplay;
-            minutes1.textContent= minutesToDisplay;
-            seconds1.textContent= secondsToDisplay;
+            days1.textContent= toRoman(daysToDisplay);
+            hours1.textContent= toRoman(hoursToDisplay);
+            minutes1.textContent= toRoman(minutesToDisplay);
+            seconds1.textContent= toRoman(secondsToDisplay);
         }
     </script>
-    </div>
+    </section>
     <!-- COUNTDOWN END --> 
+    <div class="transition-2"></div>
+    
+    <!--  WRITE SECTION -->
+    <section class="write-section">
+        <div class="write">
+            <p id="write-1">Step into the future where the brilliance of technology meets the imperative of sustainability.</p>
+            <p id="write-2">This year, our premier tech event, Z3NITH is dedicated to exploring cutting-edge innovations that drive sustainable practices. From eco-friendly tech solutions to green energy advancements, discover how technology is shaping our future. Together, let's ignite the spark of innovation and lead the charge towards a sustainable world.
+        </p>    
+        </div>
+    </section>
+    <!-- WRITE SECTION END -->
+    
+    
+    <footer style="background-image: url(assets/bg.png);">
+        
+    </footer>
 </body>
 </html>
