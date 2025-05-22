@@ -95,10 +95,10 @@
         }
         .update-bar { 
             font-family: "Marcellus", serif;
-            font-size: 0.8rem;
-            color: #ffffff;
+            font-size: 1rem;
+            color: #C59C79;
             text-align: center;
-            background-color: #957083;
+            background-color: #48192E;
             padding: 10px;
         }
         @media (max-width: 1100px) {
