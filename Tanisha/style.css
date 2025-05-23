@@ -2,20 +2,7 @@
         *{
             margin: 0;
             padding: 0;
-            cursor: none;
             overflow-x: hidden;
-        }
-        .cursor{
-            position: fixed;
-            pointer-events: none;
-            width: 5vw;
-            height: 10vh;
-            background: radial-gradient(circle, rgba(255, 255, 255, 0.432) 0%, rgba(255,255,255,0) 80%);
-            border-radius: 50%;
-            transform: translate(-50%, -50%);
-            mix-blend-mode: lighten;
-            z-index: 9999;
-            transition: background 0.3s ease;
         }
         .nav{
             height: 13vh;
@@ -107,8 +94,7 @@
             width: 100vw;
             padding: 10px;
         }
-
-         .countdown {
+        .countdown {
             height: 90vh;
             display: flex;
             justify-content: space-between;
@@ -126,8 +112,7 @@
         #countdown-timer td span{
             font-size: 48px;
             font-weight: bold;
-            color:rgb(255, 255, 255);
-            width: 
+            color:rgb(255, 255, 255); 
         }
         #countdown-timer td {
             font-size: 48px;

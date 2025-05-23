@@ -8,8 +8,6 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="cursor"></div>
-    <!-- NAVBAR START -->
     <section class="nav">
         <ul class="normal-nav">
             <a href="#"><img src="assets/logowhite.png" alt=""></a>
@@ -43,12 +41,6 @@
             const sidebar = document.querySelector('.hamburger')
             sidebar.style.display = 'none'
         }
-        const flashlight = document.querySelector('.cursor');
-
-        document.addEventListener('mousemove', e => {
-            flashlight.style.left = `${e.clientX}px`;
-            flashlight.style.top = `${e.clientY}px`;
-        });
     </script>
     <!-- NAVBAR END -->
 
@@ -91,9 +83,7 @@
     </table>
 
     <script>
-        const zenithOpening= new Date('jun 21, 2025 00:00:00');
-        
-        // run function at 1s intervals
+        const zenithOpening= new Date('jul 21, 2025 00:00:00');
         setInterval(() => {
             setCountdown(zenithOpening);
         }, 1000);
@@ -126,20 +116,14 @@
             }
 
         function setCountdown(countingDownTime) {
-             
             let now = new Date();
 
             let timeRemainign = countingDownTime - now;
-
-            // console.log(timeRemainign);
 
             let seconds = Math.floor(timeRemainign/1000);
             let minutes= Math.floor(timeRemainign/(1000*60));
             let hours = Math.floor(timeRemainign/ (1000*60*60));
             let days = Math.floor(timeRemainign/ (1000*60*60*24));
-
-            // console.log(days,hours,minutes, seconds); 
-
             let daysToDisplay = days;
             let hoursToDisplay = hours - (days * 24);
             let minutesToDisplay = minutes - (hours * 60);

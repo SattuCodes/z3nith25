@@ -1,27 +1,21 @@
 @import url('https://fonts.googleapis.com/css2?family=Marcellus&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap');
         *{
             margin: 0;
             padding: 0;
             overflow-x: hidden;
         }
-    
-        .hero-section {
-            background-image: url('assets/bg.png');
-            background-size: cover;
-            background-position: center;
-            height: 100vh;
-            width: 100%;
-        }
-
         .nav{
             height: 13vh;
+            position: fixed;
+            top: 0;
+            z-index: 100;
         }
-        .normal{
+        .normal-nav{
             display: flex;
             list-style-type: none;
             overflow: hidden;
-            backdrop-filter: blur(50px);
+            background: rgba(55, 55, 55, 0.6);
+            backdrop-filter: blur(5px); 
             position: fixed;
             top: 0;
             width: 100vw;
@@ -29,7 +23,7 @@
             justify-content: space-between;
             align-items: center;
         }
-        .normal img{
+        .normal-nav img{
             width: 5vw;
             height: auto;
             padding-left: 5vw;
@@ -95,128 +89,225 @@
             font-size: 1rem;
             color: #C59C79;
             text-align: center;
-            background-color: #48192E;
+            /* background-color: #48192E; */
+            background-color:rgba(0, 0, 0, 0.7);
+            width: 100vw;
             padding: 10px;
         }
-        .home{
+        .countdown {
+            height: 90vh;
             display: flex;
-            height: 82vh;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 4rem;
+            background: #2e1114;
+            color: white;
+        }
+        #countdown { 
+            min-width: 40vw;     
+            max-width: 40vw;
+            text-align: center;
+            padding: 20px;
+        }
+        #countdown-timer td span{
+            font-size: 48px;
+            font-weight: bold;
+            color:rgb(255, 255, 255); 
+        }
+        #countdown-timer td {
+            font-size: 48px;
+            font-weight: semi-bold;
+            color:rgb(255, 255, 255);
+            text-align: center
+        }
+        #countdown-labels td span {
+            font-size: 18px;
+            color:rgb(216, 213, 208);
+            font-weight: bold;
+        }
+        .transition {
+            margin-top: -2vh;
+            margin-bottom: -4vh;
+            height: 6vh;
+            background-image: linear-gradient(rgba(0, 0, 0, 0), #2e1114);
+            backdrop-filter: blur(10px);
+        }
+        .hero-section {
+            height: 90vh;
+            width: 100vw;
+            top: 0;
+            padding-top: 13vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .hero {
+            display: flex;
             flex-direction: column;
             justify-content: center;
             align-items: center;
-            gap: 3vh;
         }
-        .home img {
-            width: 450px;
-        }
-        .tag{
-            font-size: 2vw;
-            color: white;
-            font-family: "Lato";
-        }
-        .model{
-            width: 50vw;
-            color: white;
-        }
-        .model-timer{
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            background-color: black;
-        }
-        .countdown{
+        .tag {
+            height: 8vh;
+            font-weight: semi-bold;
+            font-size: 2rem;
+            color:rgb(255, 255, 255);
             font-family: "Marcellus", serif;
-            font-size: 4vw;
-            width: 50vw;
+            text-shadow: 0 0 20px #fff;
+        }
+        .button {
+            margin-top: 12px;
             display: flex;
-            justify-content: center;
-            color: white;
+            align-items: center;
+            justify-content: space-between;
+            width: 16vw;
         }
-        .home button{
-            border: none;
-            cursor: pointer;
-            color: #48192E;
-            background-color: #C59C79;
-            width: 8.5vw;
-            height: 5vh;
-            border-radius: 100px;
-            font-size: 1.1vw;
-            transition: 0.5s all;
+        #buttons {
+            padding: 12px;
+            color: rgb(255, 255, 255);
+            font-weight: semi-bold;
+            font-family: "Marcellus", serif;
+            font-size: large;
+            background:rgba(69, 60, 39, 0.6);
+            backdrop-filter: blur(5px);
+            border: rgb(77, 66, 44) 1px solid;
+            border-radius: 6px;
         }
-        .button{
+
+        #buttons:hover {
+            background:rgba(220, 182, 92, 0.8);
+            transition: 0.3s ease;
+        }
+        .transition-2 {
+            margin-top: -3vh;
+            margin-bottom: -2vh;
+            height: 4vh;
+            background-image: linear-gradient(rgb(46, 17, 20), rgb(197, 156, 121) );
+            backdrop-filter: blur(4px);
+        }
+        .write-section {
+            background: rgb(197, 156, 121);
             display: flex;
             justify-content: center;
             align-items: center;
-            gap: 2vw;
         }
-        .home button:hover{
-            color: #C59C79;
-            background-color: #48192E;
+
+        .write {
+            width: 60vw;
+            padding: 6rem 2rem;
+            font-family: "Marcellus", serif;
+            text-align: justify;
         }
-        .write{
-            background-color: #281822;
-            color: #957083;
-            height: 100vh;
-            font-size: 4vw;
+        #write-1{
+            font-size: 32px;
+            font-weight: bold;
+            text-align: center;
+            padding-bottom: 2rem;
         }
-        .container {
+        #write-2{
+            font-size: 24px;
+        }
+        .events{
             display: flex;
-            gap: 10px;
-            overflow: hidden;
-            }
-
-            .period {
+            flex-direction: row;
+            padding-left: 1vw;
+            padding-right: 1vw;
+        }
+        .evetext{
+            width: 25vw;
+            font-size: 5vw;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
+        .evecards {
             position: relative;
-            width: 120px;
-            height: 300px;
-            transition: all 0.3s ease;
-            overflow: hidden;
-            border-radius: 20px;
-            cursor: pointer;
-            }
+            width: 75vw;
+            height: 87vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
 
-            .period img {
+        .card {
+            position: absolute;
+            width: 20vw;
+            height: 70vh;
+            border-radius: 50px;
+            overflow: hidden;
+            transition: all 0.4s ease;
+            cursor: pointer;
+            filter: brightness(0.85);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+        }
+
+        .card img {
             width: 100%;
             height: 100%;
             object-fit: cover;
-            filter: brightness(0.7);
-            }
+        }
 
-            .period:hover {
-            width: 200px;
-            transform: scale(1.05);
-            z-index: 1;
-            }
-
-            .number {
+        .detail {
             position: absolute;
-            top: 10px;
-            left: 10px;
-            font-size: 24px;
-            background: rgba(0,0,0,0.5);
-            padding: 4px 8px;
-            border-radius: 8px;
-            }
-
-            .detail {
-            position: absolute;
-            bottom: 10px;
-            left: 10px;
-            right: 10px;
+            bottom: 0;
             background: rgba(0, 0, 0, 0.6);
+            color: white;
+            width: 100%;
             padding: 10px;
-            border-radius: 10px;
-            opacity: 0;
-            transition: opacity 0.3s ease;
             font-size: 14px;
-            }
+            transform: translateY(100%);
+            transition: transform 0.3s ease;
+        }
 
-            .period:hover .detail {
-            opacity: 1;
-            }
+        .card:hover .detail {
+            transform: translateY(0);
+        }
+        .card:nth-child(1) { z-index: 5; transform: scale(1); }
+        .card:nth-child(2) { left: 35vw; z-index: 4; transform: scale(0.95); }
+        .card:nth-child(3) { left: 20vw; z-index: 4; transform: scale(0.95); }
+        .card:nth-child(4) { left: 40vw; z-index: 3; transform: scale(0.9); }
+        .card:nth-child(5) { left: 15vw; z-index: 3; transform: scale(0.9); }
+        .card:hover {
+            transform: scale(1.1) !important;
+            z-index: 6 !important;
+            filter: brightness(1);
+        }
+        .event-name {
+            position: absolute;
+            writing-mode: vertical-rl;
+            text-orientation: mixed;
+            color: white;
+            font-size: 1.3vw;
+            background: rgba(0,0,0,0.5);
+            padding: 10px;
+            border-radius: 12px;
+            z-index: 2;
+            pointer-events: none;
+        }
+        .event-name.center {
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        .event-name.right {
+            top: 50%;
+            right: 10px;
+            transform: translateY(-50%);
+        }
+
+        .event-name.left {
+            top: 50%;
+            left: 10px;
+            transform: translateY(-50%);
+        }
+        footer {
+            height: 30vh;
+        }
+
         @media (max-width: 1100px) {
-            .normal img{
+            .normal-nav img{
                 width: 10vw;
             }
         }
@@ -224,7 +315,7 @@
             .size-40{
                 font-size: 4vw;
             }
-            .normal img{
+            .normal-nav img{
                 width: 8vw;
             }
             .hideOnMobile {
@@ -233,26 +324,53 @@
             .menu-button {
                 display: block;
             }
+            .size-40{
+                font-size: 8.5vw;
+                overflow-y: hidden;
+            }
         }
         @media (max-width: 600px) {
-            .normal{
+            .normal-nav{
                 height: 9vh;
             }
-            .normal img{
-                width: 13vw;
+            .normal-nav img{
+                width: 8vw;
                 padding-left: 5vw;
             }
             .size-40{
                 font-size: 8.5vw;
+                overflow-y: hidden;
             }
             #links{
                 padding-right: 5vw;
-            }
-            .update{
-                font-size: 3.5vw;
             }
             .nav{
                 height: 9vh;
             }
         }
+
+        @media screen and (max-width: 600px) {
+            .countdown {
+                flex-direction: column;
+                justify-content: center;
+                gap: 1rem;
+            }
+            #countdown-timer td span {
+                font-size: 32px;
+                padding: 10px 15px;
+            }
         
+            #countdown-labels td {
+                font-size: 14px;
+            }
+        }
+        @media (max-width: 600px) {
+            .hero-section {
+                padding-top: 9vh;
+            }
+        }
+        @media (max-width: 1088px) {
+            .button { 
+                width: 36vw;
+            }
+        }
