@@ -232,7 +232,105 @@
         #write-2{
             font-size: 24px;
         }
-    
+
+        .events-section{
+            background: #957083;
+        }
+        .events{
+            display: flex;
+            flex-direction: row;
+            padding-left: 1vw;
+            padding-right: 1vw;
+        }
+        .evetext{
+            width: 25vw;
+            font-size: 5vw;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
+        .evecards {
+            position: relative;
+            width: 75vw;
+            height: 87vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .card {
+            position: absolute;
+            width: 20vw;
+            height: 70vh;
+            border-radius: 50px;
+            overflow: hidden;
+            transition: all 0.4s ease;
+            cursor: pointer;
+            filter: brightness(0.85);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+        }
+
+        .card img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .detail {
+            position: absolute;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.6);
+            color: white;
+            width: 100%;
+            padding: 1rem;
+            font-size: 14px;
+            transform: translateY(100%);
+            transition: transform 0.3s ease;
+        }
+
+        .card:hover .detail {
+            transform: translateY(0);
+        }
+        .card:nth-child(1) { z-index: 5; transform: scale(1); }
+        .card:nth-child(2) { left: 35vw; z-index: 4; transform: scale(0.95); }
+        .card:nth-child(3) { left: 20vw; z-index: 4; transform: scale(0.95); }
+        .card:nth-child(4) { left: 40vw; z-index: 3; transform: scale(0.9); }
+        .card:nth-child(5) { left: 15vw; z-index: 3; transform: scale(0.9); }
+        .card:hover {
+            transform: scale(1.1) !important;
+            z-index: 6 !important;
+            filter: brightness(1);
+        }
+        .event-name {
+            position: absolute;
+            writing-mode: vertical-rl;
+            text-orientation: mixed;
+            color: white;
+            font-size: 1.3vw;
+            background: rgba(0,0,0,0.5);
+            padding: 10px;
+            border-radius: 12px;
+            z-index: 2;
+            pointer-events: none;
+        }
+        .event-name.center {
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        .event-name.right {
+            top: 50%;
+            right: 10px;
+            transform: translateY(-50%);
+        }
+
+        .event-name.left {
+            top: 50%;
+            left: 10px;
+            transform: translateY(-50%);
+        }
 
         footer {
             height: 30vh;
@@ -299,6 +397,13 @@
         @media (max-width: 600px) {
             .hero-section {
                 padding-top: 9vh;
+            }
+        }
+        @media screen and (max-width: 600px){
+            .events{
+                flex-direction: column;
+                width: 100vw;
+                padding: 1rem;
             }
         }
     
