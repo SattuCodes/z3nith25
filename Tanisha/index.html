@@ -49,9 +49,9 @@
         
         <div class="update-bar">Registration for Z3NITH'25 are open <a href='#Register' style="color: wheat; background: none; font-weight: bold;">Register Now</a>&nbsp;&nbsp;<span style="color:wheat; background-color: #48192E;"></span>></div>
         <div class="hero">
-            <img src="assets/lgo.png" style="height: 50vh; width: auto; padding: 2rem;"/>
+            <img src="assets/lgo.png"/>
             <p class="tag">Home. Sweet. Rome.</p>
-            <div class="button">
+            <div class="buttons">
                 <button>Brochure</button>
                 <button>Trailer</button>
             </div>
@@ -66,21 +66,27 @@
     <div class="3d">
         x
     </div>
-    <table id="countdown">
-        <tr id="countdown-timer">
-            <td><span id="days">x</span>:</td>
-            <td><span id="hours">x</span>:</td>
-            <td><span id="minutes">x</span>:</td>
-            <td><span id="seconds">x</span></td>
-        </tr>
-        <tr id="countdown-labels">
-            <td id="label"><span>days</span> </td>
-            <td id="label"><span>hours</span> </td>
-            <td id="label"><span>minutes</span> </td>
-            <td id="label"><span>seconds</span></td>
-        </tr>
-        
-    </table>
+    <div class="countdown">
+        <div class="time-unit">
+          <span id="days">x</span>
+          <div class="label">days</div>
+        </div>
+        <div class="colon">:</div>
+        <div class="time-unit">
+          <span id="hours">x</span>
+          <div class="label">hours</div>
+        </div>
+        <div class="colon">:</div>
+        <div class="time-unit">
+          <span id="minutes">x</span>
+          <div class="label">minutes</div>
+        </div>
+        <div class="colon">:</div>
+        <div class="time-unit">
+          <span id="seconds">x</span>
+          <div class="label">seconds</div>
+        </div>
+    </div>
 
     <script>
         const zenithOpening= new Date('jul 21, 2025 00:00:00');

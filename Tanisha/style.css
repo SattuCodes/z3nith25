@@ -109,6 +109,7 @@
         .hero-section {
             height: 90vh;
             width: 100vw;
+            overflow-x: hidden;
             top: 0;
             padding-top: 13vh;
             display: flex;
@@ -120,6 +121,7 @@
             flex-direction: column;
             justify-content: center;
             align-items: center;
+            height: 80vh;
         }
         .tag {
                 height: 8vh;
@@ -141,10 +143,11 @@
             width: 8.5vw;
             height: 5vh;
             border-radius: 100px;
-            font-size: 1vw;
+            font-size: 16px;
             transition: 0.5s all;
         }
-        .button{
+       
+        .buttons{
             display: flex;
             justify-content: center;
             align-items: center;
@@ -152,7 +155,7 @@
         }
         .hero button:hover{
             color:rgb(194, 132, 78);
-            background-color: #48192E;
+            background-color:rgb(48, 17, 31);
         }
         .hero-section {
             height: 110vh;
@@ -163,44 +166,61 @@
             flex-direction: column;
             align-items: center;
         }
-         .countdown {
+        .hero img {
+            height: 50vh; 
+            width: auto; 
+            padding: 2rem;
+        }
+        section.countdown {
             height: 90vh;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 0 4rem;
-            background:rgb(36, 13, 16);
+            padding: 0 3rem;
+            background: rgb(36, 13, 16);
             color: white;
+            gap: 16px;
         }
-        #countdown { 
-            min-width: 30vw;     
-            max-width: 30vw;
-            text-align: center;
-            padding: 20px;
-        }
-        #countdown-timer td span{
-            font-size: 48px;
-            font-weight: bold;
-            color:rgb(255, 255, 255); 
-        }
-        #countdown-timer td {
-            font-size: 48px;
-            font-weight: semi-bold;
-            color:rgb(255, 255, 255);
-            text-align: center
-        }
-        #countdown-labels td span {
-            font-size: 18px;
-            color:rgb(216, 213, 208);
-            font-weight: bold;
+        
+        div.countdown {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 16px;
         }
 
+        .time-unit {
+          text-align: center;
+          width: 8vw;
+        }
+        
+        .countdown span {
+          font-size: 36px;
+          font-weight: bold;
+          width: 6vw;
+          color: rgb(216, 213, 208);
+        }
+        
+        .label {
+          font-size: 18px;
+          margin-top: 5px;
+          font-weight: bold;
+          color: rgb(216, 213, 208);
+          width: 6vw;
+        }
+        
+        .colon {
+          font-size: 28px;
+          font-weight: bold;
+          margin: 0 10px;
+        }
+        
 
         .transition {
             margin-top: -2vh;
             margin-bottom: -4vh;
             height: 6vh;
-            background-image: linear-gradient(rgba(0, 0, 0, 0), #2e1114);
+            background-image: linear-gradient(rgba(0, 0, 0, 0), rgb(36, 13, 16));
             backdrop-filter: blur(10px);
         }
         .transition-2 {
@@ -238,9 +258,7 @@
         }
         .events{
             display: flex;
-            flex-direction: row;
-            padding-left: 1vw;
-            padding-right: 1vw;
+            justify-content: center;
         }
         .evetext{
             width: 25vw;
@@ -249,6 +267,7 @@
             justify-content: center;
             align-items: center;
             text-align: center;
+            font-family: Marcellus, serif;
         }
         .evecards {
             position: relative;
@@ -257,6 +276,7 @@
             display: flex;
             justify-content: center;
             align-items: center;
+            padding-left: 0px;
         }
 
         .card {
@@ -380,23 +400,54 @@
         }
 
         @media screen and (max-width: 600px) {
-            .countdown {
+            section.countdown {
+                height: 70vh;
+                flex-direction: column;
+                justify-content: center;
+                gap: 16px;
+            }
+            div.countdown {
+                display: flex;
                 flex-direction: column;
                 justify-content: center;
                 gap: 1rem;
             }
-            #countdown-timer td span {
-                font-size: 32px;
-                padding: 10px 15px;
+            .time-unit {
+              width: 12vw;
             }
-        
-            #countdown-labels td {
-                font-size: 14px;
+            
+            .countdown span {
+              font-size: 18px;
+              font-weight: bold;
+              width: 10vw;
+              color: rgb(216, 213, 208);
+            }
+            
+            .label {
+              font-size: 14px;
+              margin-top: 5px;
+              font-weight: bold;
+              color: rgb(216, 213, 208);
+              width: 12vw;
+            }
+            
+            .colon {
+              font-size: 28px;
+              font-weight: bold;
+              margin: 0 10px;
             }
         }
         @media (max-width: 600px) {
             .hero-section {
                 padding-top: 9vh;
+            }
+            .hero img {
+                height: 35vh; 
+                width: auto; 
+            }    
+            .hero button{
+                width: 18vw;
+                font-size: 14px;
             }
         }
         @media screen and (max-width: 600px){
