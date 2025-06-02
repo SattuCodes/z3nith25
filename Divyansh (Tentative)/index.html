@@ -1,234 +1,263 @@
 <!DOCTYPE html>
 <html>
 <head>
-<style>
-@import url('https://fonts.googleapis.com/css2?family=Marcellus&display=swap');
-body{
-  background-color: #957083;
-  margin: 0;
-  overflow-x: hidden;
-}
-.nav{
-  overflow: hidden;
-  height: 13vh;
-  width: 100vw;
-  background-color: #b3b3b3;
-  position: relative;
-  z-index: 0;
-}
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Z3NITH'25</title>
+  <meta charset="UTF-8">
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Marcellus&display=swap');
+    body {
+      background-color: #957083;
+      margin: 0;
+      overflow-x: hidden;
+    }
 
-.container{
-  display: flex;
-  justify-content: center;
-  flex-wrap:wrap;
-  margin-top: 12vw;
-  gap: 11vw;
-}
-.box{
-  width: 15vw;
-  height: 15vw;
-  margin:0vw 4vw 0vw 4vw;
-  background-position: center;
-  background-size: cover;
-  background-color: #48192e;
-  border: 0.2vw solid;
-  border-radius: 1vw;
-  border-color: #48192e;
-  transition: all 0.3s;
-}
-.profile{
-  border-radius: 100%;
-  margin: 0vw 0vw 0.2vw 3.4vw;
-  height:8vw;
-  width:8vw;
-  transition: all 0.3s;
-}
-.name{
-  margin-top: -0.5vw;
-  font-family: Marcellus;
-  font-weight: 700;
-  font-size: 1.5vw;
-  text-align: center;
-  transition: all 0.3s;
-}
-.title{
-  margin-top: 0.3vw;
-  font-family: Marcellus;
-  font-size: 1.2vw;
-  font-weight: 500;
-  text-align: center;
-  transition: all 0.3s;
-}
-.description{
-  font-family: marcellus;
-  font-size: 1vw;
-  text-align: center;
-  margin-top: 0.3vw;
-  display: none;
-  transition: all 0.3s;
-}
-.box:hover{
-  width: 26.5vw;
-  height: 15vw;
-  margin: 0vw -1.75vw 0vw -1.75vw;
-}
-.box:hover .profile{
-  margin: -5vw 0vw 0vw 7vw;
-  height: 12vw;
-  width: 12vw;
-}
-.box:hover .description{
-  display: block;
-}
-@media only screen and (max-device-width: 1100px) {
-  .container{
-    display:flex;
-    flex-wrap: wrap;
-  }
-  .box{
-    width: 25vw;
-    height: 25vw;
-    margin:0vw 5vw 0vw 5vw;
-    border: 0.3vw solid;
-    border-radius: 1vw;
-    border-color: #48192e;
-  }
-  .profile{
-    margin: 0.1vw 0vw 0.2vw 5.2vw;
-    height:14vw;
-    width:14vw;
-  }
-  .name{
-    margin-top: -0.5vw;
-    font-size: 2.5vw;
-  }
-  .title{
-    margin-top: 0.3vw;
-    font-size: 2vw;
-  }
-  .description{
-    font-size: 1.5vw;
-    margin-top: 0.3vw;
-  }
-  .box:hover{
-    width: 44vw;
-    height: 25vw;
-    margin: 0vw -4.5vw 0vw -4.5vw;
-  }
-  .box:hover .profile{
-    margin: -10vw 0vw 0vw 11.8vw;
-    height: 20vw;
-    width: 20vw;
-  }
-}
-@media only screen and (max-device-width: 800px) {
-  .container{
-    gap: 16vw;
-    flex-direction: column;
-  }
-  .box{
-    width: 50vw;
-    height: 50vw;
-    margin:0vw 0vw 0vw 25vw;
-    border: 0.4vw solid;
-    border-radius: 1vw;
-    border-color: #48192e;
-  }
-  .profile{
-    margin: 0.2vw 0vw 0vw 12vw;
-    height:25vw;
-    width:25vw;
-  }
-  .box:hover{
-    width: 88vw;
-    height: 50vw;
-    margin: 0vw 0vw 0vw 6vw;
-  }
-  .box:hover .profile{
-    margin: -10vw 0vw 0vw 28vw;
-    height: 30vw;
-    width: 30vw;
-  }
-  .name{
-    margin-top: -0.5vw;
-    font-size: 5.5vw;
-  }
-  .title{
-    margin-top: 0.3vw;
-    font-size: 4vw;
-  }
-  .description{
-    font-size: 3vw;
-  }
-  
-}
-</style>
+    .nav {
+      overflow: hidden;
+      height: 13vh;
+      width: 100vw;
+      background-color: #b3b3b3;
+      position: relative;
+      z-index: 0;
+    }
+
+    .container {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      margin-top: 12vw;
+      gap: 11vw;
+    }
+
+    .box {
+      width: 15vw;
+      height: 15vw;
+      margin: 0vw 4vw 0vw 4vw;
+      background-position: center;
+      background-size: cover;
+      background-image: url("./tablet.jpeg");
+      border: 0.2vw solid;
+      border-radius: 1vw;
+      border-color: #48192e;
+      transition: all 0.3s;
+    }
+
+    .profile {
+      border-radius: 100%;
+      margin: 0vw 0vw 0.2vw 3.4vw;
+      height: 8vw;
+      width: 8vw;
+      transition: all 0.3s;
+    }
+
+    .name {
+      margin-top: -0.5vw;
+      font-family: Marcellus;
+      font-weight: 700;
+      font-size: 1.5vw;
+      text-align: center;
+      transition: all 0.3s;
+    }
+
+    .title {
+      margin-top: 0.3vw;
+      font-family: Marcellus;
+      font-size: 1.2vw;
+      font-weight: 500;
+      text-align: center;
+      transition: all 0.3s;
+    }
+
+    .description {
+      font-family: Marcellus;
+      font-size: 1vw;
+      text-align: center;
+      margin-top: 0.3vw;
+      display: none;
+      transition: all 0.3s;
+    }
+
+    .box:hover {
+      width: 26.5vw;
+      height: 15vw;
+      margin: 0vw -1.75vw 0vw -1.75vw;
+    }
+
+    .box:hover .profile {
+      margin: -5vw 0vw 0vw 7vw;
+      height: 12vw;
+      width: 12vw;
+    }
+
+    .box:hover .description {
+      display: block;
+    }
+
+    @media only screen and (max-device-width: 1100px) {
+      .container {
+        display: flex;
+        flex-wrap: wrap;
+      }
+
+      .box {
+        width: 25vw;
+        height: 25vw;
+        margin: 0vw 5vw 0vw 5vw;
+        border: 0.3vw solid;
+        border-radius: 1vw;
+        border-color: #48192e;
+      }
+
+      .profile {
+        margin: 0.1vw 0vw 0.2vw 5.2vw;
+        height: 14vw;
+        width: 14vw;
+      }
+
+      .name {
+        margin-top: -0.5vw;
+        font-size: 2.5vw;
+      }
+
+      .title {
+        margin-top: 0.3vw;
+        font-size: 2vw;
+      }
+
+      .description {
+        font-size: 1.5vw;
+        margin-top: 0.3vw;
+      }
+
+      .box:hover {
+        width: 44vw;
+        height: 25vw;
+        margin: 0vw -4.5vw 0vw -4.5vw;
+      }
+
+      .box:hover .profile {
+        margin: -10vw 0vw 0vw 11.8vw;
+        height: 20vw;
+        width: 20vw;
+      }
+    }
+
+    @media only screen and (max-device-width: 800px) {
+      .container {
+        gap: 16vw;
+        flex-direction: column;
+      }
+
+      .box {
+        width: 50vw;
+        height: 50vw;
+        margin: 0vw 0vw 0vw 25vw;
+        border: 0.4vw solid;
+        border-radius: 1vw;
+        border-color: #48192e;
+      }
+
+      .profile {
+        margin: 0.2vw 0vw 0vw 12vw;
+        height: 25vw;
+        width: 25vw;
+      }
+
+      .box:hover {
+        width: 88vw;
+        height: 50vw;
+        margin: 0vw 0vw 0vw 6vw;
+      }
+
+      .box:hover .profile {
+        margin: -10vw 0vw 0vw 28vw;
+        height: 30vw;
+        width: 30vw;
+      }
+
+      .name {
+        margin-top: -0.5vw;
+        font-size: 5.5vw;
+      }
+
+      .title {
+        margin-top: 0.3vw;
+        font-size: 4vw;
+      }
+
+      .description {
+        font-size: 3vw;
+      }
+    }
+  </style>
 </head>
 <body>
-<div class="nav"></div>
-<div class="container">
-  <div class="box">
-    <img src="assets/kabie.png" class="profile">
-    <div class="name">Satyam Tiwari</div>
-    <div class="title">PR Head</div>
-    <div class="description">Glu glu glu glu glu glu glu glu glu glu</div>
+  <div class="nav"></div>
+
+  <div class="container">
+    <div class="box">
+      <img src="./shakal.png" class="profile">
+      <div class="name">Satyam Tiwari</div>
+      <div class="title">PR Head</div>
+      <div class="description">Glu glu glu glu glu glu glu glu glu glu</div>
+    </div>
+    <div class="box">
+      <img src="./shakal.png" class="profile">
+      <div class="name">Satyam Tiwari</div>
+      <div class="title">PR Head</div>
+      <div class="description">Gugu gaga Big BABY</div>
+    </div>
+    <div class="box">
+      <img src="./shakal.png" class="profile">
+      <div class="name">Satyam Tiwari</div>
+      <div class="title">PR Head</div>
+      <div class="description">Glu glu glu glu glu glu glu glu glu glu</div>
+    </div>
+    <div class="box">
+      <img src="./shakal.png" class="profile">
+      <div class="name">Satyam Tiwari</div>
+      <div class="title">PR Head</div>
+      <div class="description">Glu glu glu glu glu glu glu glu glu glu</div>
+    </div>
+    <div class="box">
+      <img src="./shakal.png" class="profile">
+      <div class="name">Satyam Tiwari</div>
+      <div class="title">PR Head</div>
+      <div class="description">Glu glu glu glu glu glu glu glu glu glu</div>
+    </div>
+    <div class="box">
+      <img src="./shakal.png" class="profile">
+      <div class="name">Satyam Tiwari</div>
+      <div class="title">PR Head</div>
+      <div class="description">Glu glu glu glu glu glu glu glu glu glu</div>
+    </div>
+    <div class="box">
+      <img src="./shakal.png" class="profile">
+      <div class="name">Satyam Tiwari</div>
+      <div class="title">PR Head</div>
+      <div class="description">Glu glu glu glu glu glu glu glu glu glu</div>
+    </div>
   </div>
-  <div class="box">
-    <img src="assets/kabie.png" class="profile">
-    <div class="name">Satyam Tiwari</div>
-    <div class="title">PR Head</div>
-    <div class="description">Gugu gaga Big BABY</div>
+
+  <div class="container">
+    <div class="box">
+      <img src="./shakal.png" class="profile">
+      <div class="name">Satyam Tiwari</div>
+      <div class="title">PR Head</div>
+      <div class="description">Glu glu glu glu glu glu glu glu glu glu</div>
+    </div>
+    <div class="box">
+      <img src="./shakal.png" class="profile">
+      <div class="name">Satyam Tiwari</div>
+      <div class="title">PR Head</div>
+      <div class="description">Gugu gaga Big BABY</div>
+    </div>
+    <div class="box">
+      <img src="./shakal.png" class="profile">
+      <div class="name">Satyam Tiwari</div>
+      <div class="title">PR Head</div>
+      <div class="description">Glu glu glu glu glu glu glu glu glu glu</div>
+    </div>
   </div>
-  <div class="box">
-    <img src="assets/kabie.png" class="profile">
-    <div class="name">Satyam Tiwari</div>
-    <div class="title">PR Head</div>
-    <div class="description">Glu glu glu glu glu glu glu glu glu glu</div>
-  </div>
-  <div class="box">
-    <img src="assets/kabie.png" class="profile">
-    <div class="name">Satyam Tiwari</div>
-    <div class="title">PR Head</div>
-    <div class="description">Glu glu glu glu glu glu glu glu glu glu</div>
-  </div>
-  <div class="box">
-    <img src="assets/kabie.png" class="profile">
-    <div class="name">Satyam Tiwari</div>
-    <div class="title">PR Head</div>
-    <div class="description">Glu glu glu glu glu glu glu glu glu glu</div>
-  </div>
-  <div class="box">
-    <img src="assets/kabie.png" class="profile">
-    <div class="name">Satyam Tiwari</div>
-    <div class="title">PR Head</div>
-    <div class="description">Glu glu glu glu glu glu glu glu glu glu</div>
-  </div>
-  <div class="box">
-    <img src="assets/kabie.png" class="profile">
-    <div class="name">Satyam Tiwari</div>
-    <div class="title">PR Head</div>
-    <div class="description">Glu glu glu glu glu glu glu glu glu glu</div>
-  </div>
-</div>
-<div class="container">
-  <div class="box">
-    <img src="assets/kabie.png" class="profile">
-    <div class="name">Satyam Tiwari</div>
-    <div class="title">PR Head</div>
-    <div class="description">Glu glu glu glu glu glu glu glu glu glu</div>
-  </div>
-  <div class="box">
-    <img src="assets/kabie.png" class="profile">
-    <div class="name">Satyam Tiwari</div>
-    <div class="title">PR Head</div>
-    <div class="description">Gugu gaga Big BABY</div>
-  </div>
-  <div class="box">
-    <img src="assets/kabie.png" class="profile">
-    <div class="name">Satyam Tiwari</div>
-    <div class="title">PR Head</div>
-    <div class="description">Glu glu glu glu glu glu glu glu glu glu</div>
-  </div>
-</div>
 </body>
 </html>
