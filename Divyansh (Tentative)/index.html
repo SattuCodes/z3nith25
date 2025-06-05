@@ -93,7 +93,12 @@
       display: block;
     }
 
+    .heading{
+      display:none;
+    }
+
     @media only screen and (max-device-width: 1100px) {
+
       .container {
         display: flex;
         flex-wrap: wrap;
@@ -188,12 +193,23 @@
       .description {
         font-size: 3vw;
       }
+
+      .heading{
+        display:block;
+        display:flex;
+        justify-content:center;
+        background-color:#fff;
+        padding:2vh;
+        font-size:10vw;
+        font-family: Marcellus;
+        font-weight:400;
+      }
     }
   </style>
 </head>
 <body>
   <div class="nav"></div>
-
+  <div class="heading">Omás</div>
   <div class="container">
     <div class="box">
       <img src="assets/kabie.png" class="profile">
