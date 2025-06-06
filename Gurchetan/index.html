@@ -1,197 +1,377 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Z3NITH'25</title>
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"/>
-    <style>
-        @import url('https://fonts.googleapis.com/css2?family=Marcellus&display=swap');
-        *{
-            margin: 0;
-            padding: 0;
-        }
-        .normal{
-            display: flex;
-            list-style-type: none;
-            overflow: hidden;
-            background-color: black;
-            position: fixed;
-            top: 0;
-            width: 100vw;
-            height: 13vh;
-            justify-content: space-between;
-            align-items: center;
-        }
-        .normal img{
-            width: 5vw;
-            height: auto;
-            padding-left: 5vw;
-        }
-        #links{
-            display: flex;
-            flex-direction: row;
-            gap: 3vw;
-            padding-right: 5vw;
-        }
-        li a{
-            color: white;
-            text-align: center;
-            font-family: "Marcellus", serif;
-            font-size: 27px;
-            text-decoration: none;
-            
-        }
-        .underline-ani {
-            display: inline-block;
-            position: relative;
-        }
-        .underline-ani::after {
-            content: '';
-            position: absolute;
-            width: 100%;
-            transform: scaleX(0);
-            height: 2px;
-            bottom: 0;
-            left: 0;
-            background-color: #ffffff;
-            transition: transform 0.3s ease-out;
-        }
-        .underline-ani:hover::after {
-            transform: scaleX(1);
-        }
-        .hamburger{
-            position: fixed;
-            font: black;
-            top: 0; 
-            right: 0;
-            height: 100vh;
-            width: 100vw;
-            background-color: rgba(0, 0, 0, 0.6);
-            backdrop-filter: blur(12px);
-            list-style: none;
-            display: none;
-            flex-direction: column;
-            align-items: center;
-            justify-content: space-evenly;
-        }
-        .humburger li{
-            width: 100%;
-            }
-        .humburger a{
-            width: 100%;
-        }
-        .menu-button{
-            display: none;
-        }
-        @media (max-width: 1100px) {
-            .normal img{
-                width: 10vw;
-            }
-        }
-        @media (max-width: 1088px) {
-            .size-40{
-                font-size: 4vw;
-            }
-            .normal img{
-                width: 8vw;
-            }
-            .hideOnMobile {
-                display: none;
-            }
-            .menu-button {
-                display: block;
-            }
-        }
-        @media (max-width: 600px) {
-            .normal{
-                height: 9vh;
-            }
-            .normal img{
-                width: 15vw;
-                padding-left: 5vw;
-            }
-            .size-40{
-                font-size: 8.5vw;
-            }
-            #links{
-                padding-right: 5vw;
-            }
-        }
-
-
-
-
-
-
-
-
-
-
-
-
-
-    </style>
+<title>Z3NITH-video page</title>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0&icon_names=arrow_back_ios,arrow_forward_ios" />
+<style>
+body{
+    height:87vh;
+    background-color: #281822;
+    margin:0;
+}
+.navbar{
+  margin:0;
+  padding:0;
+  height:13vh;
+  width:100%;
+  background-color:black;
+}
+.slider{
+    position: relative;
+    width: 100%;
+    height: 21vh;
+    margin:2vw 0vw 0vw 0vw;
+    overflow: hidden;
+}
+.item{
+    position: absolute;
+    width: 20vw;
+    height: 10vw;
+    border-radius: 10px;
+    padding: 0px;
+    transition: 0.5s;
+    left: calc(50% - 11vw);
+    top: 0vw;
+    overflow:hidden;
+}
+#prev{
+    position: absolute;
+    top: 4vw;
+    color: #c59c79;
+    background-color: transparent;
+    border: none;
+    left: 10vw;
+}
+#next{
+    right: 12vw;
+    position: absolute;
+    top: 4vw;
+    color: #c59c79;
+    background-color: transparent;
+    border: none;
+}
+.container{
+  display:flex;
+  justify-content:center;
+  margin-top:1vh;
+}
+.player{
+  background-color:grey;
+  height:60vh;
+  width:85vw;
+  border: 0.1vw solid #957083;
+}
+.material-symbols-outlined{
+  font-size:2vw;
+}
+@media only screen and (max-device-width: 1024px){
+  .slider{
+      height: 24vw;
+  }
+  .player{
+    height:58vh;
+    width:90vw;
+  }
+  .item{
+    width: 23vw;
+    height: 12vw;
+    border-radius: 10px;
+    left: calc(50% - 12vw);
+  }
+  #next{
+    right: 5vw;
+    top:4vw;
+  }
+  #prev{
+    left: 5vw;
+    top: 4vw;
+  }
+  .material-symbols-outlined{
+    font-size:3vw;
+  }
+}
+@media only screen and (max-device-width: 800px){
+  .player{
+    height:60vh;
+    width:90vw;
+  }
+  .slider{
+      height: 17vh;
+      margin:10vw 0vw 0vw 0vw;
+  }
+  .item{
+    width: 40vw;
+    height: 20vw;
+    border-radius: 10px;
+    left: calc(50% - 20vw);
+  }
+  #next{
+    right: 3vw;
+    top:6vh;
+  }
+  #prev{
+    left: 3vw;
+    top: 6vh;
+  }
+  .material-symbols-outlined{
+    font-size:3.5vw;
+  }
+}
+@media only screen and (max-device-width: 600px){
+  .player{
+    height:60vh;
+    width:90vw;
+  }
+  .slider{
+      height: 30vw;
+      margin:10vw 0vw 0vw 0vw;
+  }
+  .item{
+    width: 60vw;
+    height: 30vw;
+    border-radius: 10px;
+    left: calc(50% - 30vw);
+  }
+  #next{
+    display:none;
+  }
+  #prev{
+    display:none;
+  }
+}
+</style>
 </head>
 <body>
-    <div class="nav">
-        <ul class="normal">
-            <a href="#"><img src="assets/logowhite.png" alt=""></a>
-            <div id="links">
-                <li class="underline-ani hideOnMobile"><a href="#home">Home</a></li>
-                <li class="underline-ani hideOnMobile"><a href="#brochure">Brochure</a></li>
-                <li class="underline-ani hideOnMobile"><a href="#team">The Team</a></li> 
-                <li class="underline-ani hideOnMobile"><a href="#vids">Videos</a></li>
-                <li class="underline-ani hideOnMobile"><a href="#treasury">The Treasury</a></li>
-                <li class="menu-button" onclick=showSidebar()><a href="#"><span class="material-symbols-outlined size-40">
-                menu
-                </span></a></li>
-            </div>
-        </ul>
-        <ul class="hamburger">
-            <li onclick=hideSidebar()><a href="#"><span class="material-symbols-outlined size-40">close</span></a></li>
-            <li><a href="#" class="underline-ani">Home</a></li>
-            <li><a href="#" class="underline-ani">Brochure</a></li>
-            <li><a href="#" class="underline-ani">The Team</a></li>
-            <li><a href="#" class="underline-ani">Videos</a></li>
-            <li><a href="#" class="underline-ani">The Treasury</a></li>
-        </ul>
-    </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-    <script>
-        function showSidebar(){
-            const sidebar = document.querySelector('.hamburger')
-            sidebar.style.display = 'flex'
+<div class="navbar"></div>
+<div class="container">
+  <div class="player">
+  <iframe id="vid" width="100%" height="100%" src="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+  </div>
+</div>
+<div tabindex="1" id="slide" class="slider">
+  <div onclick="as()" class="item"><img src="./assets/13.png" height="100%" width="100%">
+  </div>
+  <div onclick="bs()" class="item"><img src="./assets/15.png" height="100%" width="100%">
+  </div>
+  <div onclick="cs()" class="item"><img src="./assets/17.png" height="100%" width="100%">
+  </div>
+  <div onclick="ds()" class="item"><img src="./assets/19.png" height="100%" width="100%">
+  </div>
+  <div onclick="es()" class="item"><img src="./assets/21.png" height="100%" width="100%">
+  </div>
+  <div onclick="fs()" class="item"><img src="./assets/23.png" height="100%" width="100%">
+  </div>
+  <div onclick="gs()" class="item"><img src="./assets/23t.png" height="100%" width="100%">
+  </div>
+  <div onclick="hs()" class="item"><img src="./assets/25.png" height="100%" width="100%">
+  </div>
+  <div onclick="is()" class="item"><img src="./assets/25t.png" height="100%" width="100%">
+  </div>
+  <div onclick="js()" class="item"><img src="./assets/24.png" height="100%" width="100%">
+  </div>
+  <div onclick="ks()" class="item"><img src="./assets/24t.png" height="100%" width="100%">
+  </div>
+  <div onclick="ls()" class="item"><img src="./assets/22.png" height="100%" width="100%">
+  </div>
+  <div onclick="ms()" class="item"><img src="./assets/22t.png" height="100%" width="100%">
+  </div>
+  <div onclick="ns()" class="item"><img src="./assets/20.png" height="100%" width="100%">
+  </div>
+  <div onclick="os()" class="item"><img src="./assets/18.png" height="100%" width="100%">
+  </div>
+  <div onclick="ps()" class="item"><img src="./assets/12.png" height="100%" width="100%">
+  </div>
+  <button id="next"><span class="material-symbols-outlined">arrow_forward_ios</span></button>
+  <button id="prev"><span class="material-symbols-outlined">arrow_back_ios</span></button>
+</div>
+<script>
+let x = document.querySelectorAll('.slider .item');
+    let a = document.getElementById('next');
+    let b = document.getElementById('prev');    
+    let active = 7;
+    function loadShow(){
+        let stt = 0;
+        x[active].style.transform = `none`;
+        x[active].style.zIndex = 2;
+        x[active].style.filter = 'none';
+        x[active].style.opacity = 1;
+        for(var i = active + 1; i < x.length ; i++){
+            stt++;
+            x[i].style.transform =  stt > 1 ? `translateX(${13*stt}vw) scale(0.65,0.75) perspective(0vw)`:`translateX(${15*stt}vw) scale(0.7,0.8) perspective(0vw)`;
+            if (stt == 1){
+            x[i].style.zIndex = 1;
+            }
+            if (stt == 2){
+            x[i].style.zIndex = 0;
+            }
+            if (stt > 2){
+            x[i].style.zIndex = -1;
+            }
+            x[i].style.opacity = stt > 2 ? 0:1;
         }
-        function hideSidebar(){
-            const sidebar = document.querySelector('.hamburger')
-            sidebar.style.display = 'none'
+        stt = 0;
+        for(var i = active - 1; i >= 0; i--){
+            stt++;
+            x[i].style.transform = stt > 1 ? `translateX(${-13*stt}vw) scale(0.65,0.75) perspective(0vw)`:`translateX(${-15*stt}vw) scale(0.7,0.8) perspective(0vw)`;
+            x[i].style.zIndex = stt > 2 ? -1:0;
+            x[i].style.opacity = stt > 2 ? 0:1;
         }
+        if (active == 0){
+            document.getElementById("prev").style.color = "#281822";
+        }
+        if (active > 0){
+            document.getElementById("prev").style.color = "#c59c79";
+        }
+        if (active < 15){
+            document.getElementById("next").style.color = "#c59c79";
+        }
+        if (active == 15){
+            document.getElementById("next").style.color = "#281822";
+        }
+    }
+    loadShow();
+    a.onclick = function(){
+        active = active + 1 < x.length ? active + 1 : active;
+        loadShow();
+    }
+    b.onclick = function(){
+        active = active - 1 >= 0 ? active - 1 : active;
+        loadShow();
+    }
+    function as() {
+        active = 0;
+        document.getElementById("vid").src = "https://www.youtube.com/embed/mx8zwQOqASM?si=XvSoQcOtVjVI3Jni";
+        loadShow();
+    }
+    function bs() {
+        active = 1;
+        document.getElementById("vid").src = "https://www.youtube.com/embed/f2szmdziWZ4?si=ep_A9Y__Wt1nqBs8";
+        loadShow();
+    }
+    function cs() {
+        active = 2;
+        document.getElementById("vid").src = "https://www.youtube.com/embed/V608MMmU0Tk?si=2NDwswbHD1VtJjCU";
+        loadShow();
+    }
+    function ds() {
+        active = 3;
+        document.getElementById("vid").src = "https://www.youtube.com/embed/95kbdhlDFdE?si=2Tgz2ro12rJl044f";
+        loadShow();
+    }
+    function es() {
+        active = 4;
+        document.getElementById("vid").src = "https://www.youtube.com/embed/7M50LH8Gw8c?si=-XWU7FbP7Qj_z_gF";
+        loadShow();
+    }
+    function fs() {
+        active = 5;
+        document.getElementById("vid").src = "https://www.youtube.com/embed/zMDJWq8-JdU?si=tIcMOLDLUadXiOwQ";
+        loadShow();
+    }
+    function gs() {
+        active = 6;
+        document.getElementById("vid").src = "https://www.youtube.com/embed/zZk0F9yvb4A?si=JbRhUn2fH4KOTfsa";
+        loadShow();
+    }
+    function hs() {
+        active = 7;
+        document.getElementById("vid").src = "https://www.youtube.com/embed/rXvGnig0VQU?si=3lIOgAF9J2rysO4h";
+        loadShow();
+    }
+    function is() {
+        active = 8;
+        document.getElementById("vid").src = "https://www.youtube.com/embed/rXvGnig0VQU?si=3lIOgAF9J2rysO4h";
+        loadShow();
+    }
+    function js() {
+        active = 9;
+        document.getElementById("vid").src = "https://www.youtube.com/embed/jK0NAvdVXok?si=6PWP7deFsXQTAfIq";
+        loadShow();
+    }
+    function ks() {
+        active = 10;
+        document.getElementById("vid").src = "https://www.youtube.com/embed/JZFhL2MAwgY?si=Ej9Yv1ZFt4QMvK6o";
+        loadShow();
+    }
+    function ls() {
+        active = 11;
+        document.getElementById("vid").src = "https://www.youtube.com/embed/VROaUIA-ACs?si=gnsRvofvYjTkufmT";
+        loadShow();
+    }
+    function ms() {
+        active = 12;
+        document.getElementById("vid").src = "https://www.youtube.com/embed/5Vc6nkNHsyA?si=ZIHSZAAOgWVBQ04q";
+        loadShow();
+    }
+    function ns() {
+        active = 13;
+        document.getElementById("vid").src = "https://www.youtube.com/embed/rXvGnig0VQU?si=0ehPwFwX8_3Ofa9p";
+        loadShow();
+    }
+    function os() {
+        active = 14;
+        document.getElementById("vid").src = "https://www.youtube.com/embed/JjguhXUWHds?si=PcUdkSmz7GHyVBYE";
+        loadShow();
+    }
+    function ps() {
+        active = 15;
+        document.getElementById("vid").src = "https://www.youtube.com/embed/2mvur73vxX4?si=waJCqXyHNIdader7";
+        loadShow();
+    }
 
 
-
-
-
-
-
-
-
-
-
-
-
-    </script>
+var slider = document.querySelector(".slider");
+slider.addEventListener("touchstart", startTouch, false);
+slider.addEventListener("touchmove", moveTouch, false);
+ 
+var initialX = null;
+var initialY = null;
+ 
+function startTouch(e) {
+  initialX = e.touches[0].clientX;
+  initialY = e.touches[0].clientY;
+};
+ 
+function moveTouch(e) {
+  if (initialX === null) {
+    return;
+  }
+ 
+  if (initialY === null) {
+    return;
+  }
+ 
+  var currentX = e.touches[0].clientX;
+  var currentY = e.touches[0].clientY;
+ 
+  var diffX = initialX - currentX;
+  var diffY = initialY - currentY;
+ 
+  if (Math.abs(diffX) > Math.abs(diffY)) {
+    if (diffX > 0) {
+      active = active + 1;
+      if (active > 15){
+        active = 15;
+      }
+      loadShow();
+    }
+    if (diffX < 0) {
+      active = active - 1;
+      if (active < 0){
+        active = 0;
+      }
+      loadShow();
+    }  
+  }  
+ 
+  initialX = null;
+  initialY = null;
+   
+  e.preventDefault();
+};
+</script>
 </body>
 </html>
