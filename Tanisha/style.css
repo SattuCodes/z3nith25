@@ -4,6 +4,9 @@
             padding: 0;
             overflow-x: hidden;
         }
+        body {
+            background: black;
+        }
         .cursor{
             position: fixed;
             pointer-events: none;
@@ -396,8 +399,8 @@
             height: 87vh;
         }
         .sponsors-title{
-            margin-top: 2rem;
-            font-size: 40px;
+            margin-top: 4rem;
+            font-size: 48px;
             display: flex;
             justify-content: center;
             align-items: center;
@@ -438,7 +441,7 @@
                 height: 9vh;
             }
             .normal-nav img{
-                width: 8vw;
+                width: 12vw;
                 padding-left: 5vw;
             }
             .size-40{
@@ -550,4 +553,107 @@
                 width: 100vw;
             }
         }
-    
+
+        @media screen and (max-width: 600px){
+        .events-section{
+            height: 100vh;
+            overflow: hidden;
+        }
+        .events{
+            flex-direction: column;
+            width: 100vw;
+            height: 90vh;
+        }
+        .evetext {
+            height: 15vh;
+            margin-top: 3rem;
+        }
+        .evetext span {
+            font-size: 48px;
+        }
+        .evecards {
+            height: 65vh;
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+            overflow-x: auto;
+            padding: 0 1rem;
+            gap: 1rem;
+            position: relative;
+        }
+
+        .card {
+            position: relative;
+            width: 70vw;
+            height: 60vh;
+            border-radius: 25px;
+            overflow: hidden;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+        }
+
+        .detail {
+            bottom: 0;
+            color: white;
+            width: 100%;
+            padding: 1.5rem 1rem 1rem 1rem;
+            font-size: 14px;
+            transform: translateY(0);
+            border-radius: 0 0 25px 25px;
+        }
+
+        .event-name {
+            color: white;
+            font-size: 18px;
+            font-weight: bold;
+            padding: 12px 16px;
+            z-index: 2;
+            top: 20px;
+            left: 20px;
+        }
+
+        .event-name.center,
+        .event-name.right,
+        .event-name.left {
+            top: 20px;
+            left: 20px;
+            right: auto;
+            transform: none;
+            writing-mode: horizontal-tb;
+        }
+
+        .card:nth-child(1),
+        .card:nth-child(2),
+        .card:nth-child(3),
+        .card:nth-child(4),
+        .card:nth-child(5) {
+            left: auto;
+            z-index: 1;
+            transform: none;
+            position: relative;
+        }
+        .card:nth-child(5) {
+            margin-right: 32px;
+        }
+    }
+
+    @media screen and (max-width: 480px){
+        .card {
+            min-width: 80vw;
+            max-width: 80vw;
+            height: 55vh;
+        }
+
+        .evetext {
+            font-size: 32px;
+        }
+
+        .event-name {
+            font-size: 26px;
+            padding: 10px 14px;
+        }
+
+        .detail {
+            font-size: 24px;
+            padding: 1.2rem 0.8rem 0.8rem 0.8rem;
+        }
+    }
