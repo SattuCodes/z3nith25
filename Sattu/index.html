@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Z3NITH'25</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"/>
+    <link rel="stylesheet" href="style.css">
+    <script async src="https://unpkg.com/es-module-shims@1.6.3/dist/es-module-shims.js"></script>
+    <script type="importmap">
+        {
+        "imports": {
+            "three": "https://unpkg.com/three@v0.163.0/build/three.module.js",
+            "three/addons/": "https://unpkg.com/three@v0.163.0/examples/jsm/"
+        }
+        }
+    </script>
+
+
+</head>
+<body>
+    
+    <section class="nav">
+        <ul class="normal-nav">
+            <a href="#"><img src="assets/logowhite.png" alt=""></a>
+            <div id="links">
+                <li class="underline-ani hideOnMobile"><a href="#home">Home</a></li>
+                <li class="underline-ani hideOnMobile"><a href="#brochure">Brochure</a></li>
+                <li class="underline-ani hideOnMobile"><a href="#team">Omáda</a></li> 
+                <li class="underline-ani hideOnMobile"><a href="#vids">Videos</a></li>
+                <li class="underline-ani hideOnMobile"><a href="#treasury">The Treasury</a></li>
+                <li class="menu-button" onclick=showSidebar()><a href="#"><span class="material-symbols-outlined size-40">
+                menu
+                </span></a></li>
+            </div>
+        </ul>
+        <ul class="hamburger">
+            <li onclick=hideSidebar()><a href="#"><span class="material-symbols-outlined size-40">close</span></a></li>
+            <li><a href="#" class="underline-ani">Home</a></li>
+            <li><a href="#" class="underline-ani">Brochure</a></li>
+            <li><a href="#" class="underline-ani">Omáda</a></li>
+            <li><a href="#" class="underline-ani">Videos</a></li>
+            <li><a href="#" class="underline-ani">The Treasury</a></li>
+        </ul>
+    </section>
+    
+    <script>
+        function showSidebar(){
+            const sidebar = document.querySelector('.hamburger')
+            sidebar.style.display = 'flex'
+        }
+        function hideSidebar(){
+            const sidebar = document.querySelector('.hamburger')
+            sidebar.style.display = 'none'
+        }
+    </script>
+    <!-- NAVBAR END -->
+
+    <!-- HERO START -->
+    <section class="hero-section" style="background-image: url(assets/bg1.png); background-size: cover; background-repeat: no-repeat;">
+        
+        <div class="update-bar">Registration for Z3NITH'25 are open <a href='#Register' style="color: wheat; background: none; font-weight: bold;">Register Now</a>&nbsp;&nbsp;<span style="color:wheat; background-color: #48192E;"></span>></div>
+        <div class="hero">
+            <img src="assets/lgo.png"/>
+            <p class="tag">Home. Sweet. Rome.</p>
+            <div class="buttons">
+                <button>Brochure</button>
+                <button>Trailer</button>
+            </div>
+        </div>
+        
+    </section>
+    <!-- HERO END -->
+    <div class="transition"></div>
+    <!-- COUNTDOWN START -->
+    <section class="countdown">
+    <div class="threeD">
+        x
+    </div>
+    <script type="module" src="script.js"></script>
+    <div class="countdown">
+        <div class="time-unit">
+          <span id="days">x</span>
+          <div class="label">days</div>
+        </div>
+        <div class="colon">:</div>
+        <div class="time-unit">
+          <span id="hours">x</span>
+          <div class="label">hours</div>
+        </div>
+        <div class="colon">:</div>
+        <div class="time-unit">
+          <span id="minutes">x</span>
+          <div class="label">minutes</div>
+        </div>
+        <div class="colon">:</div>
+        <div class="time-unit">
+          <span id="seconds">x</span>
+          <div class="label">seconds</div>
+        </div>
+    </div>
+    <script>
+        const zenithOpening= new Date('jul 21, 2025 00:00:00');
+        setInterval(() => {
+            setCountdown(zenithOpening);
+        }, 1000);
+
+        function toRoman(num) {
+                const romanMap = [
+                    { val: 1000, sym: 'M' },
+                    { val: 900, sym: 'CM' },
+                    { val: 500, sym: 'D' },
+                    { val: 400, sym: 'CD' },
+                    { val: 100, sym: 'C' },
+                    { val: 90, sym: 'XC' },
+                    { val: 50, sym: 'L' },
+                    { val: 40, sym: 'XL' },
+                    { val: 10, sym: 'X' },
+                    { val: 9, sym: 'IX' },
+                    { val: 5, sym: 'V' },
+                    { val: 4, sym: 'IV' },
+                    { val: 1, sym: 'I' }
+                ];
+
+                let result = '';
+                for (const { val, sym } of romanMap) {
+                    while (num >= val) {
+                        result += sym;
+                        num -= val;
+                    }
+                }
+                return result || 'LX';
+            }
+
+        function setCountdown(countingDownTime) {
+            let now = new Date();
+
+            let timeRemainign = countingDownTime - now;
+
+            let seconds = Math.floor(timeRemainign/1000);
+            let minutes= Math.floor(timeRemainign/(1000*60));
+            let hours = Math.floor(timeRemainign/ (1000*60*60));
+            let days = Math.floor(timeRemainign/ (1000*60*60*24));
+            let daysToDisplay = days;
+            let hoursToDisplay = hours - (days * 24);
+            let minutesToDisplay = minutes - (hours * 60);
+            let secondsToDisplay = seconds - (minutes*60);
+
+            console.log(daysToDisplay, hoursToDisplay, minutesToDisplay, secondsToDisplay);
+
+            const days1 = document.getElementById('days');
+            const hours1 = document.getElementById('hours');
+            const minutes1 = document.getElementById('minutes');
+            const seconds1 = document.getElementById('seconds');
+            
+            days1.textContent= toRoman(daysToDisplay);
+            hours1.textContent= toRoman(hoursToDisplay);
+            minutes1.textContent= toRoman(minutesToDisplay);
+            seconds1.textContent= toRoman(secondsToDisplay);
+        }
+
+    </script>
+    
+    </section>
+    <!-- COUNTDOWN END --> 
+    <div class="transition-2"></div>
+    
+    <!--  WRITE SECTION -->
+    <section class="write-section">
+        <div class="write">
+            <p id="write-1">Step into the future where the brilliance of technology meets the imperative of sustainability.</p>
+            <p id="write-2">This year, our premier tech event, Z3NITH is dedicated to exploring cutting-edge innovations that drive sustainable practices. From eco-friendly tech solutions to green energy advancements, discover how technology is shaping our future. Together, let's ignite the spark of innovation and lead the charge towards a sustainable world.
+        </p>    
+        </div>
+    </section>
+    <!-- WRITE SECTION END -->
+
+    <div class="transition-3"></div>
+    <!-- EVENTS SECTION START -->
+    <section class="events-section">
+        <div class="events">
+            <div class="evetext">
+                <span>Events for 2025</span>
+            </div>
+            <div class="evecards">
+                <div class="card">
+                    <div class="event-name center">Veni Vidi Vici</div>
+                    <img src="assets/bg.png" alt="Greece">
+                    <div class="detail">Greek art focused on idealism and harmony.</div>
+                </div>
+                <div class="card">
+                    <div class="event-name right">Visions of Rome</div>
+                    <img src="assets/bg.png" alt="Roman">
+                    <div class="detail">Roman art was realistic and architectural.</div>
+                </div>
+                <div class="card">
+                    <div class="event-name left">DuxDesign</div>
+                    <img src="assets/bg.png" alt="Gothic">
+                    <div class="detail">Gothic featured verticality and light.</div>
+                </div>
+                <div class="card">
+                    <div class="event-name right">Legion of Laughs</div>
+                    <img src="assets/bg.png" alt="Renaissance">
+                    <div class="detail">Renaissance art revived classical forms.</div>
+                </div>
+                <div class="card">
+                    <div class="event-name left">Imago Comica</div>
+                    <img src="assets/bg.png" alt="Baroque">
+                    <div class="detail">Baroque was dramatic and rich in contrast.</div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+    <!-- EVENTS SECTION END -->
+
+    <div class="transition-4"></div>
+
+    <!-- SPONSORS SECTION START -->
+    <section class="sponsors-section">
+        <div class="sponsors-title">
+            <span>Our Sponsors</span>
+        </div>
+    </section>
+    <!-- SPONSORS SECTION END -->
+    <div class="transition-5"></div>
+    <!-- TREASURY SECTION START -->
+     <section class= "treasury-section">
+        <div class="treasury-title">
+            <span>Treasury</span>
+        </div>
+     </section>
+    <!-- TREASURY SECTION END -->
+
+    <footer style="background-image: url(assets/bg.png);">
+    </footer>
+    
+</body>
+</html>

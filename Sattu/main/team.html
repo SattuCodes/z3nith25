@@ -1,0 +1,491 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Z3NITH'25</title>
+  <meta charset="UTF-8">
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Marcellus&display=swap');
+    *{
+      margin: 0;
+      padding: 0;
+    }
+    body {
+      background-color: #662341;
+      margin: 0;
+      overflow-x: hidden;
+    }
+    .nav {
+        height: 13vh;
+        position: fixed;
+        top: 0;
+        z-index: 100;
+    }
+
+    .normal-nav {
+        display: flex;
+        list-style-type: none;
+        background: rgba(0, 0, 0, 0.3);
+        backdrop-filter: blur(3px);
+        position: fixed;
+        top: 0;
+        width: 100vw;
+        height: 13vh;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .normal-nav img {
+        width: 5vw;
+        height: auto;
+        padding-left: 5vw;
+    }
+
+    #links {
+        display: flex;
+        flex-direction: row;
+        gap: 3vw;
+        padding-right: 5vw;
+    }
+
+    li a {
+        color: white;
+        text-align: center;
+        font-family: "Marcellus", serif;
+        font-size: 27px;
+        text-decoration: none;
+    }
+
+    .underline-ani {
+        display: inline-block;
+        position: relative;
+    }
+
+    .underline-ani::after {
+        content: '';
+        position: absolute;
+        width: 100%;
+        transform: scaleX(0);
+        height: 2px;
+        bottom: 0;
+        left: 0;
+        background-color: #ffffff;
+        transition: transform 0.3s ease-out;
+    }
+
+    .underline-ani:hover::after {
+        transform: scaleX(1);
+    }
+
+    .hamburger {
+        position: fixed;
+        top: 0;
+        right: 0;
+        height: 100vh;
+        width: 100vw;
+        background-color: rgba(0, 0, 0, 0.6);
+        backdrop-filter: blur(12px);
+        list-style: none;
+        display: none;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-evenly;
+    }
+
+    .hamburger li {
+        width: 100%;
+    }
+
+    .hamburger a {
+        width: 100%;
+    }
+
+    .menu-button {
+        display: none;
+    }
+    .container {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      margin-top: 12vw;
+      gap: 11vw;
+    }
+
+    .box {
+      width: 21vw;
+      height: 18vw;
+      margin: 0vw 2vw 0vw 2vw;
+      background-position: center;
+      background-size: contain;
+      background-repeat: no-repeat;
+      background-image: url("assets/tablet.png");
+      transition: all 0.3s;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .profile {
+      border-radius: 100%;
+      height: 8vw;
+      width: 8vw;
+      transition: all 0.3s;
+    }
+
+    .name {
+      margin-top: 0.5vw;
+      font-family: Marcellus;
+      font-weight: 700;
+      font-size: 1.3vw;
+      text-align: center;
+      transition: all 0.3s;
+    }
+
+    .title {
+      margin-top: 0.3vw;
+      font-family: Marcellus;
+      font-size: 1vw;
+      font-weight: 500;
+      text-align: center;
+      transition: all 0.3s;
+    }
+
+    .description {
+      font-family: Marcellus;
+      font-size: 0.8vw;
+      text-align: center;
+      margin-top: 0.7vw;
+      display: none;
+      transition: all 0.3s;
+      width: 18vw;
+    }
+
+    .box:hover {
+      width: 26.5vw;
+      height: 18vw;
+      margin: 0vw -0.75vw 0vw -0.75vw;
+    }
+
+    .box:hover .profile {
+      margin: -10vw 0vw 0vw 0vw;
+      height: 10vw;
+      width: 10vw;
+    }
+
+    .box:hover .description {
+      display: block; 
+    }
+    .box:hover .name{
+      font-size: 1.5vw;
+    }
+    .heading{
+      display:none;
+    }
+
+    @media only screen and (max-device-width: 1100px) {
+
+      .container {
+        display: flex;
+        flex-wrap: wrap;
+      }
+
+      .box {
+        width: 25vw;
+        height: 25vw;
+        margin: 0vw 5vw 0vw 5vw;
+        border: 0.3vw solid;
+        border-radius: 1vw;
+        border-color: #48192e;
+      }
+
+      .profile {
+        margin: 0.1vw 0vw 0.2vw 5.2vw;
+        height: 14vw;
+        width: 14vw;
+      }
+
+      .name {
+        margin-top: -0.5vw;
+        font-size: 2.5vw;
+      }
+
+      .title {
+        margin-top: 0.3vw;
+        font-size: 2vw;
+      }
+
+      .description {
+        font-size: 1.5vw;
+        margin-top: 0.3vw;
+      }
+
+      .box:hover {
+        width: 44vw;
+        height: 25vw;
+        margin: 0vw -4.5vw 0vw -4.5vw;
+      }
+
+      .box:hover .profile {
+        margin: -10vw 0vw 0vw 11.8vw;
+        height: 20vw;
+        width: 20vw;
+      }
+    }
+
+    @media only screen and (max-device-width: 800px) {
+      .container {
+        gap: 16vw;
+        flex-direction: column;
+      }
+
+      .box {
+        width: 50vw;
+        height: 50vw;
+        margin: 0vw 0vw 0vw 25vw;
+        border: 0.4vw solid;
+        border-radius: 1vw;
+        border-color: #48192e;
+      }
+
+      .profile {
+        margin: 0.2vw 0vw 0vw 12vw;
+        height: 25vw;
+        width: 25vw;
+      }
+
+      .box:hover {
+        width: 88vw;
+        height: 50vw;
+        margin: 0vw 0vw 0vw 6vw;
+      }
+
+      .box:hover .profile {
+        margin: -10vw 0vw 0vw 28vw;
+        height: 30vw;
+        width: 30vw;
+      }
+
+      .name {
+        margin-top: -0.5vw;
+        font-size: 5.5vw;
+      }
+
+      .title {
+        margin-top: 0.3vw;
+        font-size: 4vw;
+      }
+
+      .description {
+        font-size: 3vw;
+      }
+
+      .heading{
+        display:block;
+        display:flex;
+        justify-content:center;
+        background-color:#fff;
+        padding:2vh;
+        font-size:10vw;
+        font-family: Marcellus;
+        font-weight:400;
+      }
+    }
+    @media (max-width: 1100px) {
+            .normal-nav img{
+                width: 10vw;
+            }
+        }
+        @media (max-width: 1088px) {
+            .size-40{
+                font-size: 4vw;
+            }
+            .normal-nav img{
+                width: 8vw;
+            }
+            .hideOnMobile {
+                display: none;
+            }
+            .menu-button {
+                display: block;
+            }
+            .size-40{
+                font-size: 8.5vw;
+                overflow-y: hidden;
+            }
+        }
+        @media (max-width: 600px) {
+            .normal-nav{
+                height: 9vh;
+            }
+            .normal-nav img{
+                width: 12vw;
+                padding-left: 5vw;
+            }
+            .size-40{
+                font-size: 8.5vw;
+                overflow-y: hidden;
+            }
+            #links{
+                padding-right: 5vw;
+            }
+            .nav{
+                height: 9vh;
+            }
+        }
+  </style>
+</head>
+<body>
+  <section class="nav">
+        <ul class="normal-nav">
+        <a href="#"><img src="assets/logowhite.png" alt=""></a>
+        <div id="links">
+            <li class="underline-ani hideOnMobile"><a href="index.html">Home</a></li>
+            <li class="underline-ani hideOnMobile"><a href="#brochure">Brochure</a></li>
+            <li class="underline-ani hideOnMobile"><a href="team.html">Omáda</a></li>
+            <li class="underline-ani hideOnMobile"><a href="video.html">Videos</a></li>
+            <li class="underline-ani hideOnMobile"><a href="#treasury">The Treasury</a></li>
+            <li class="menu-button" onclick="showSidebar()"><a href="#"><span class="material-symbols-outlined size-40">menu</span></a></li>
+        </div>
+        </ul>
+        <ul class="hamburger">
+        <li onclick="hideSidebar()"><a href="#"><span class="material-symbols-outlined size-40">close</span></a></li>
+        <li><a href="#" class="underline-ani">Home</a></li>
+        <li><a href="#" class="underline-ani">Brochure</a></li>
+        <li><a href="#" class="underline-ani">Omáda</a></li>
+        <li><a href="#" class="underline-ani">Videos</a></li>
+        <li><a href="#" class="underline-ani">The Treasury</a></li>
+        </ul>
+    </section>
+  <div class="heading">Omás</div>
+  <div class="container">
+    <div class="box">
+      <img src="assets/vice.png" class="profile">
+      <div class="name">Ms. Mohini Arora</div>
+      <div class="title">Event Director</div>
+      <div class="description"></div>
+    </div>
+    <div class="box">
+      <img src="assets/priyankamaam.png" class="profile">
+      <div class="name">Mrs. Priyanaka Prasad</div>
+      <div class="title">Event Director</div>
+      <div class="description"></div>
+    </div>
+    <div class="box">
+      <img src="assets/richamaam.png" class="profile">
+      <div class="name">Mrs. Richa Mittal</div>
+      <div class="title">Event Director</div>
+      <div class="description"></div>
+    </div>
+  </div>
+
+  <div class="container">
+    <div class="box">
+      <img src="assets/queen.png" class="profile">
+      <div class="name">Bhavya Dhariwal</div>
+      <div class="title">Mentor Codinator</div>
+      <div class="description">Badmashi ni mittar</div>
+    </div>
+    <div class="box">
+      <img src="assets/sattu.png" class="profile">
+      <div class="name">Satyam Tiwari</div>
+      <div class="title">PR Head</div>
+      <div class="description"></div>
+    </div>
+  </div>
+
+  <div class="container">
+    <div class="box">
+      <img src="assets/kabie.png" class="profile">
+      <div class="name">Kabir Jhamb</div>
+      <div class="title">Executive - Tech & Operations</div>
+      <div class="description">Everybody's go to guy , always up for help whether it's life or his "goated" music taste . Man United runs through his veins with El Bicho and LeBron James living rent-free in his head</div>
+    </div>
+    <div class="box">
+      <img src="assets/sarthakhot.png" class="profile">
+      <div class="name">Sarthak Singh</div>
+      <div class="title">President</div>
+      <div class="description">On a mission to understand the universe, despite it's ongoing refusal to co-operate.</div>
+    </div>
+    <div class="box">
+      <img src="assets/gurchetan.png" class="profile">
+      <div class="name">Gurchetan Singh</div>
+      <div class="title">Vice President</div>
+      <div class="description"></div>
+    </div>
+  </div>
+
+    <div class="container">
+    <div class="box">
+      <img src="assets/tanisha.png" class="profile">
+      <div class="name">Tanisha </div>
+      <div class="title">Website Manager</div>
+      <div class="description"></div>
+    </div>
+    <div class="box">
+      <img src="assets/ayushi.png" class="profile">
+      <div class="name">Ayushi</div>
+      <div class="title">Event Lead ( )</div>
+      <div class="description"></div>
+    </div>
+    <div class="box">
+      <img src="assets/ritika.png" class="profile">
+      <div class="name">Ritika</div>
+      <div class="title">PR Head</div>
+      <div class="description"></div>
+    </div>
+  </div>
+
+  <div class="container">
+    <div class="box">
+      <img src="assets/naman.png" class="profile">
+      <div class="name">Naman</div>
+      <div class="title">PR Head</div>
+      <div class="description"></div>
+    </div>
+    <div class="box">
+      <img src="assets/raghav.png" class="profile">
+      <div class="name">Raghav</div>
+      <div class="title">PR Head</div>
+      <div class="description"></div>
+    </div>
+    <div class="box">
+      <img src="assets/ayanshree.png" class="profile">
+      <div class="name">Ayanshree</div>
+      <div class="title">PR Head</div>
+      <div class="description"></div>
+    </div>
+  </div>
+
+    <div class="container">
+    <div class="box">
+      <img src="assets/divyansh.png" class="profile">
+      <div class="name">Divyansh Pal</div>
+      <div class="title">PR Head</div>
+      <div class="description"></div>
+    </div>
+    <div class="box">
+      <img src="assets/advika.png" class="profile">
+      <div class="name">Advika</div>
+      <div class="title">PR Head</div>
+      <div class="description"></div>
+    </div>
+    <div class="box">
+      <img src="assets/kabie.png" class="profile">
+      <div class="name">Ayush </div>
+      <div class="title">PR Head</div>
+      <div class="description"></div>
+    </div>
+  </div>
+
+    <div class="container">
+    <div class="box">
+      <img src="assets/souvagya.png" class="profile">
+      <div class="name">Souvagya Shukla</div>
+      <div class="title">PR Head</div>
+      <div class="description"></div>
+    </div>
+    </div>
+
+</body>
+</html>
