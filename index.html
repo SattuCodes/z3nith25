@@ -195,7 +195,6 @@
                 width: auto;
                 padding: 2rem;
             }
-
             section.countdown {
                 height: 120vh;
                 display: flex;
@@ -252,6 +251,12 @@
                 font-family: "Marcellus", serif;
                 text-align: center;
             }
+            .line {
+                opacity: 0;
+                display: inline-block;
+                transition: opacity 0.8s ease;
+            }
+
 
             #write-1 {
                 font-size: 36px;
@@ -492,7 +497,7 @@
 
             @media screen and (max-width: 600px) {
                 section.countdown {
-                    height: 80vh;
+                    height: 120vh;
                     flex-direction: column;
                     justify-content: center;
                     gap: 16px;
@@ -598,10 +603,12 @@
                 #lol, #vor{
                     top: 35% !important;
                 }
-                .threeD{
+                .threeD-mobile{
                     position: absolute;
                     z-index: 1;
-                    height: 80vh;
+                    height: 120vh;
+                    width: 100vw;
+                    background-image: url(assets/download.png);
                 }
                 div.countdown{
                     z-index: 2;
@@ -705,6 +712,9 @@
             }
 
             @media screen and (max-width: 480px) {
+                .detail{
+                    top: 50% !important;
+                }
                 .evecards{
                     padding-left: 4rem;
                     height: 66vh;
@@ -719,11 +729,11 @@
                 }
 
                 .event-name {
-                    font-size: 10vw;
+                    font-size: 8vw;
                 }
 
                 .detail {
-                    font-size: 24px;
+                    font-size: 5vw;
                 }
             }
 
@@ -776,8 +786,26 @@
     </section>
 
     <section class="countdown">
-        <div class="threeD">X</div>
+        <div class="threeD-mobile">X</div>
         <script type="module" src="script.js"></script>
+        <script>
+        function updateThreeD() {
+            const div = document.querySelector('.threeD') || document.querySelector('.threeD-mobile');
+            
+            if (!div) return;
+
+            if (window.innerWidth <= 600) {
+            div.className = 'threeD-mobile';
+            div.textContent = '';
+            } else {
+            div.className = 'threeD';
+            div.textContent = 'X'; 
+            }
+        }
+        updateThreeD();
+        window.addEventListener('resize', updateThreeD);
+        </script>
+
         <div class="countdown">
         <div class="time-unit">
             <span id="days">x</span>
@@ -854,10 +882,47 @@
     </section>
     <section class="write-section">
         <div class="write">
-            <p id="write-1">Step into the future where the brilliance of technology meets the imperative of sustainability.</p>
-            <p id="write-2">This year, our premier tech event, Z3NITH is dedicated to exploring cutting-edge innovations that drive sustainable practices. From eco-friendly tech solutions to green energy advancements, discover how technology is shaping our future. Together, let's ignite the spark of innovation and lead the charge towards a sustainable world.</p>
+            <p id="write-1">
+                <span class="line">Step into the future</span><br>
+                <span class="line">where the brilliance of technology</span><br>
+                <span class="line">meets the imperative of sustainability.</span>
+            </p>
+            <p id="write-2">
+                <span class="line">This year, our premier tech event, Z3NITH is dedicated to exploring</span><br>
+                <span class="line">cutting-edge innovations that drive sustainable practices.</span><br>
+                <span class="line">From eco-friendly tech solutions to green energy advancements,</span><br>
+                <span class="line">discover how technology is shaping our future.</span><br>
+                <span class="line">Together, let's ignite the spark of innovation and</span><br>
+                <span class="line">lead the charge towards a sustainable world.</span>
+            </p>
         </div>
     </section>
+    <script>
+        const section = document.querySelector('.write-section');
+        const lines = document.querySelectorAll('.line');
+
+        window.addEventListener('scroll', () => {
+            const sectionTop = section.offsetTop;
+            const sectionHeight = section.offsetHeight;
+            const scrollY = window.scrollY;
+            const windowHeight = window.innerHeight;
+
+            const sectionInView = scrollY + windowHeight > sectionTop + 100 && scrollY < sectionTop + sectionHeight - 100;
+
+            if (sectionInView) {
+            lines.forEach((line, index) => {
+                setTimeout(() => {
+                line.style.opacity = 1;
+                }, index * 500);
+            });
+            } else {
+            lines.forEach(line => {
+                line.style.opacity = 0;
+            });
+            }
+        });
+    </script>
+
 
     <section class="events-section">
         <div class="events">
@@ -895,7 +960,7 @@
             </div>
             <div class="card">
                 <div id="details">
-                    <div class="event-name left">Imago Comica</div>
+                    <div class="event-name left" id="ic">Imago Comica</div>
                     <div class="detail">Baroque was dramatic and rich in contrast.</div>
                 </div>
                 <img src="assets/bg.png">
