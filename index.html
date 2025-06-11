@@ -197,9 +197,11 @@
             }
             section.countdown {
                 height: 120vh;
+                position: relative;
                 display: flex;
                 justify-content: space-between;
                 align-items: center;
+                overflow: hidden;
                 padding: 0 3rem;
                 background: rgb(36, 13, 16);
                 color: white;
@@ -454,7 +456,7 @@
                 }
 
                 .normal-nav img {
-                    width: 8vw;
+                    width: 12vw;
                 }
 
                 .hideOnMobile {
@@ -471,7 +473,7 @@
                 }
                 }
 
-                @media (max-width: 600px) {
+                @media (max-width: 500px) {
                 .normal-nav {
                     height: 9vh;
                 }
@@ -493,9 +495,77 @@
                 .nav {
                     height: 9vh;
                 }
-            }
-
-            @media screen and (max-width: 600px) {
+                }
+                @media (max-width: 1100px){
+                    .hero button{
+                        width: 20vw;
+                        font-size: 20px;
+                    }
+                    .events-section{
+                        height: 120vh;
+                    }
+                    .evetext{
+                        width: 25vw;
+                    }
+                    .evecards{
+                        width: 75vw;
+                    }
+                    section.countdown {
+                        height: 120vh;
+                        flex-direction: column;
+                        justify-content: center;
+                        gap: 16px;
+                    }
+                    .card{
+                        border-radius: 10%;
+                        height: 40vh;
+                        width: 30vw;
+                    }
+                    .threeD-mobile{
+                        position: absolute;
+                        z-index: 1;
+                        height: 120vh;
+                        width: 100vw;
+                        background-image: url(assets/download.png);
+                        background-size: cover;
+                        background-repeat: no-repeat;
+                        filter: brightness(0.4);
+                    }
+                    div.countdown {
+                        z-index: 2;
+                        display: flex;
+                        justify-content: center;
+                        gap: 0.5rem;
+                        width: 100vw;
+                        background-color: #00000091;
+                        height: 100%;
+                    }
+                    .time-unit{
+                        width: 15vw;
+                    }
+                    .countdown span{
+                        font-size: 4vw;
+                    }
+                    .label{
+                        font-size: 2.5vw;
+                    }
+                    .colon{
+                        font-size: 4vw;
+                    }
+                    .write-section{
+                        height: 150vh;
+                    }
+                    #write-1{
+                        font-size: 5vw;
+                    }
+                    #write-2{
+                        font-size: 5vw;
+                    }
+                    .write{
+                        width: 90vw;
+                    }
+                }
+            @media screen and (max-width: 500px) {
                 section.countdown {
                     height: 120vh;
                     flex-direction: column;
@@ -511,7 +581,6 @@
                     background-color: #00000091;
                     height: 100%;
                 }
-
                 .time-unit {
                     width: 15vw;
                 }
@@ -538,10 +607,10 @@
                 }
             }
 
-            @media (max-width: 600px) {
+            @media (max-width: 500px) {
                 .write-section {
                     overflow: hidden;
-                    height: 150vh;
+                    height: 200vh;
                     z-index: 3;
                 }
 
@@ -576,7 +645,7 @@
                 }
             }
 
-            @media (max-width: 600px) {
+            @media (max-width: 500px) {
                 .hero-section {
                     padding-top: 9vh;
                     height: 100vh;
@@ -609,6 +678,9 @@
                     height: 120vh;
                     width: 100vw;
                     background-image: url(assets/download.png);
+                    background-size: cover;
+                    background-repeat: no-repeat;
+                    filter: none !important;
                 }
                 div.countdown{
                     z-index: 2;
@@ -634,6 +706,7 @@
                 .evetext {
                     height: 15vh;
                     margin-top: 3rem;
+                    width: 100vw;
                 }
 
                 .evetext span {
@@ -787,24 +860,35 @@
 
     <section class="countdown">
         <div class="threeD-mobile">X</div>
-        <script type="module" src="script.js"></script>
         <script>
-        function updateThreeD() {
-            const div = document.querySelector('.threeD') || document.querySelector('.threeD-mobile');
-            
-            if (!div) return;
+            let isMobile = window.innerWidth <= 1100;
+            let firstRun = true;
 
-            if (window.innerWidth <= 600) {
-            div.className = 'threeD-mobile';
-            div.textContent = '';
-            } else {
-            div.className = 'threeD';
-            div.textContent = 'X'; 
+            function updateThreeD() {
+                const div = document.querySelector('.threeD') || document.querySelector('.threeD-mobile');
+                if (!div) return;
+
+                const nowMobile = window.innerWidth <= 1100;
+
+                if (nowMobile !== isMobile || firstRun) {
+                    isMobile = nowMobile;
+                    firstRun = false;
+
+                    if (nowMobile) {
+                        div.className = 'threeD-mobile';
+                        div.textContent = '';
+                    } else {
+                        div.className = 'threeD';
+                        div.textContent = 'X';
+                    }
+                }
             }
-        }
-        updateThreeD();
-        window.addEventListener('resize', updateThreeD);
+
+            updateThreeD(); // force first update
+            window.addEventListener('resize', updateThreeD);
         </script>
+
+        <script type="module" src="script.js"></script>
 
         <div class="countdown">
         <div class="time-unit">
@@ -883,17 +967,17 @@
     <section class="write-section">
         <div class="write">
             <p id="write-1">
-                <span class="line">Step into the future</span><br>
-                <span class="line">where the brilliance of technology</span><br>
-                <span class="line">meets the imperative of sustainability.</span>
+                <span class="line">Step into the past,</span><br>
+                <span class="line">where the grandeur of Ancient Rome</span><br>
+                <span class="line">meets the timeless spirit of ambition and legacy.</span>
             </p>
             <p id="write-2">
-                <span class="line">This year, our premier tech event, Z3NITH is dedicated to exploring</span><br>
-                <span class="line">cutting-edge innovations that drive sustainable practices.</span><br>
-                <span class="line">From eco-friendly tech solutions to green energy advancements,</span><br>
-                <span class="line">discover how technology is shaping our future.</span><br>
-                <span class="line">Together, let's ignite the spark of innovation and</span><br>
-                <span class="line">lead the charge towards a sustainable world.</span>
+                <span class="line">This year, our premier tech event, Z3NITH, journeys through the echoes of Roman ingenuity — a civilization</span><br>
+                <span class="line">that laid the foundations of modern engineering, governance, and innovation.</span><br>
+                <span class="line">From legendary feats of architecture to strategic mastery and cultural influence, explore how the brilliance of</span><br>
+                <span class="line">Rome continues to inspire today's breakthroughs.</span><br>
+                <span class="line">Together, let's revive the legacy,</span><br>
+                <span class="line">and forge a future as enduring as the Empire itself.</span>
             </p>
         </div>
     </section>

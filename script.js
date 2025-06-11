@@ -2,7 +2,8 @@ import * as THREE from 'three';
 import { GLTFLoader } from 'three/addons/loaders/GLTFLoader.js';
 
 function initScene() {
-    const container = document.querySelector('.threeD');
+    const container = document.querySelector('.threeD') || document.querySelector('.threeD-mobile');
+
     container.textContent = '';
 
     const renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true });
