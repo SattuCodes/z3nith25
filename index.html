@@ -313,64 +313,77 @@
                 height: 100%;
                 object-fit: cover;
             }
+            #details{
+                display: flex;
+                justify-items: center;
+            }
 
             .detail {
                 position: absolute;
                 bottom: 4px;
-                background: rgba(0, 0, 0, 0.6);
                 color: white;
-                width: 100%;
                 padding: 1rem;
-                font-size: 14px;
+                font-size: 1.5vw;
                 transform: translateY(100%);
-                transition: transform 0.3s ease;
+                transition: all 0.3s ease;
                 border-radius: 20px;
+                top: 55%;
+                text-align: center;
             }
 
             .card:hover .detail {
                 transform: translateY(0);
+                z-index: 2;
             }
 
             .card:nth-child(1) { z-index: 5; transform: scale(1); }
             .card:nth-child(2) { left: 35vw; z-index: 4; transform: scale(0.95); }
             .card:nth-child(3) { left: 12vw; z-index: 4; transform: scale(0.95); }
             .card:nth-child(4) { left: 40vw; z-index: 3; transform: scale(0.9); }
-            .card:nth-child(5) { left: 4vw; z-index: 3; transform: scale(0.9); }
+            .card:nth-child(5) { left: 6vw; z-index: 3; transform: scale(0.9); }
 
             .card:hover {
                 transform: scale(1.1) !important;
                 z-index: 6 !important;
                 filter: brightness(1);
             }
+            .card:hover .event-name{
+                display: block;
+            }
+            .card:hover img{
+                filter: brightness(0.5) !important;
+            }
 
             .event-name {
                 position: absolute;
-                writing-mode: vertical-rl;
-                text-orientation: mixed;
                 color: white;
-                font-size: 1.3vw;
-                background: rgba(0,0,0,0.5);
+                font-size: 3.5vw;
                 padding: 10px;
                 border-radius: 12px;
                 z-index: 2;
                 pointer-events: none;
+                display: none;
+                text-align: center;
+                width: 20vw;
+                box-sizing: border-box;
             }
 
             .event-name.center {
-                top: 50%;
+                top: 40%;
                 left: 50%;
+                text-align: center;
                 transform: translate(-50%, -50%);
             }
 
             .event-name.right {
-                top: 50%;
-                right: 10px;
+                top: 40%;
                 transform: translateY(-50%);
+                text-align: center;
             }
 
             .event-name.left {
-                top: 50%;
-                left: 10px;
+                text-align: center;
+                top: 40%;
                 transform: translateY(-50%);
             }
 
@@ -590,6 +603,10 @@
                 div.countdown{
                     z-index: 2;
                 }
+                #details{
+                    display: flex;
+                    justify-content: center ;
+                }
                 .events-section {
                     height: 120vh;
                     overflow: hidden;
@@ -627,7 +644,7 @@
 
                 .card {
                     position: relative;
-                    width: 70vw;
+                    width: 60vw;
                     height: 60vh;
                     border-radius: 25px;
                     overflow: hidden;
@@ -637,31 +654,34 @@
                 .detail {
                     bottom: 0;
                     color: white;
-                    width: 100%;
                     padding: 1.5rem 1rem 1rem 1rem;
                     font-size: 14px;
-                    transform: translateY(0);
+                    transform: translateY(100%);
                     border-radius: 0 0 25px 25px;
+                    width: 60vw;
+                    box-sizing: border-box;
+                    transition: 0.5s all;
+                }
+                .card:hover .detail{
+                    transform: translate(0);
                 }
 
                 .event-name {
+                    left: 0% !important;
                     color: white;
                     font-size: 18px;
                     font-weight: bold;
                     padding: 12px 16px;
                     z-index: 2;
-                    top: 20px;
-                    left: 20px;
+                    width: 60vw;
+                    box-sizing: border-box;
                 }
 
                 .event-name.center,
                 .event-name.right,
                 .event-name.left {
-                    top: 20px;
-                    left: 20px;
                     right: auto;
                     transform: none;
-                    writing-mode: horizontal-tb;
                 }
 
                 .card:nth-child(1),
@@ -676,15 +696,18 @@
                 }
 
                 .card:nth-child(5) {
-                    margin-right: 32px;
+                    margin-right: 100px;
                 }
             }
 
             @media screen and (max-width: 480px) {
+                .evecards{
+                    padding-left: 4rem;
+                    height: 66vh;
+                }
                 .card {
-                    min-width: 80vw;
-                    max-width: 80vw;
-                    height: 55vh;
+                    min-width: 70vw;
+                    height: 60vh;
                 }
 
                 .evetext {
@@ -693,12 +716,10 @@
 
                 .event-name {
                     font-size: 26px;
-                    padding: 10px 14px;
                 }
 
                 .detail {
                     font-size: 24px;
-                    padding: 1.2rem 0.8rem 0.8rem 0.8rem;
                 }
             }
 
@@ -841,29 +862,39 @@
         </div>
         <div class="evecards">
             <div class="card">
-            <div class="event-name center">Veni Vidi Vici</div>
-            <img src="assets/events.png">
-            <div class="detail">Greek art focused on idealism and harmony.</div>
+                <div id="details">
+                    <div class="event-name center">Veni Vidi Vici</div>
+                    <div class="detail">Greek art focused on idealism and harmony.</div>
+                </div>
+                <img src="assets/events.png">
             </div>
             <div class="card">
-            <div class="event-name right">Visions of Rome</div>
-            <img src="assets/bg.png">
-            <div class="detail">Roman art was realistic and architectural.</div>
+                <div id="details">
+                    <div class="event-name right">Visions of Rome</div>
+                    <div class="detail">Roman art was realistic and architectural.</div>
+                </div>
+                <img src="assets/bg.png">
             </div>
             <div class="card">
-            <div class="event-name left">DuxDesign</div>
-            <img src="assets/bg.png">
-            <div class="detail">Gothic featured verticality and light.</div>
+                <div id="details">
+                    <div class="event-name left" style="top: 45%;">DuxDesign</div>
+                    <div class="detail">Gothic featured verticality and light.</div>
+                </div>
+                <img src="assets/duxdesign.png">
             </div>
             <div class="card">
-            <div class="event-name right">Legion of Laughs</div>
-            <img src="assets/bg.png">
-            <div class="detail">Renaissance art revived classical forms.</div>
+                <div id="details">
+                    <div class="event-name right">Legion of Laughs</div>
+                    <div class="detail">Renaissance art revived classical forms.</div>
+                </div>
+                <img src="assets/eventlol.png">
             </div>
             <div class="card">
-            <div class="event-name left">Imago Comica</div>
-            <img src="assets/bg.png">
-            <div class="detail">Baroque was dramatic and rich in contrast.</div>
+                <div id="details">
+                    <div class="event-name left">Imago Comica</div>
+                    <div class="detail">Baroque was dramatic and rich in contrast.</div>
+                </div>
+                <img src="assets/bg.png">
             </div>
         </div>
         </div>
