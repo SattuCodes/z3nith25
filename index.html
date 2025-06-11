@@ -595,6 +595,9 @@
             }
 
             @media screen and (max-width: 600px) {
+                #lol, #vor{
+                    top: 35% !important;
+                }
                 .threeD{
                     position: absolute;
                     z-index: 1;
@@ -644,11 +647,12 @@
 
                 .card {
                     position: relative;
-                    width: 60vw;
-                    height: 60vh;
                     border-radius: 25px;
                     overflow: hidden;
                     box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+                }
+                .card:hover img{
+                    filter: brightness(0.3);
                 }
 
                 .detail {
@@ -658,7 +662,7 @@
                     font-size: 14px;
                     transform: translateY(100%);
                     border-radius: 0 0 25px 25px;
-                    width: 60vw;
+                    width: 70vw;
                     box-sizing: border-box;
                     transition: 0.5s all;
                 }
@@ -673,7 +677,7 @@
                     font-weight: bold;
                     padding: 12px 16px;
                     z-index: 2;
-                    width: 60vw;
+                    width: 70vw;
                     box-sizing: border-box;
                 }
 
@@ -707,7 +711,7 @@
                 }
                 .card {
                     min-width: 70vw;
-                    height: 60vh;
+                    height: 55vh;
                 }
 
                 .evetext {
@@ -715,7 +719,7 @@
                 }
 
                 .event-name {
-                    font-size: 26px;
+                    font-size: 10vw;
                 }
 
                 .detail {
@@ -870,7 +874,7 @@
             </div>
             <div class="card">
                 <div id="details">
-                    <div class="event-name right">Visions of Rome</div>
+                    <div class="event-name right" id="vor">Visions of Rome</div>
                     <div class="detail">Roman art was realistic and architectural.</div>
                 </div>
                 <img src="assets/bg.png">
@@ -884,7 +888,7 @@
             </div>
             <div class="card">
                 <div id="details">
-                    <div class="event-name right">Legion of Laughs</div>
+                    <div class="event-name right" id="lol">Legion of Laughs</div>
                     <div class="detail">Renaissance art revived classical forms.</div>
                 </div>
                 <img src="assets/eventlol.png">
