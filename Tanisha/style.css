@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Marcellus&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400..900&display=swap');
         *{
             margin: 0;
             padding: 0;
@@ -408,10 +409,169 @@
             color: rgb(55, 21, 36);
             font-family: Marcellus, serif;
         }
+        
+        .footer {
+            background:rgb(53,27,18);
+            padding: 50px 40px;
+            box-shadow: 0 -8px 32px rgba(0, 0, 0, 0.6); //for top
+            overflow: hidden;
+            align-items: center;
+        }
 
-        footer {
+        .footer-container {
+            width: 95vw;
+            margin: 0;
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 60px;
+        }
+
+        .tag-section {
+            text-align: center;
+            padding: 20px;
+        }
+
+        #tag {
+            font-family: 'Cinzel', serif;
+            font-size: 2.4rem;
+            font-weight: 400;
+            color: #d4c4a0;
+            text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.8);
+            letter-spacing: 4px;
+            margin-bottom: 1.2rem;
+            overflow: hidden;
+
+                text-shadow: 0 0 2px rgba(255, 255, 255, 0.4),
+                             0 0 4px rgba(255, 255, 255, 0.3),
+                             0 0 6px rgba(255, 255, 255, 0.2);
+        }
+
+        .social {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin-top: 1.5rem;
+        }
+
+        .sdot {
+            width: 55px;
+            height: 55px;
+            background:rgba(0, 0, 0, 0.3);
+            border-radius: 18px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.2s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        .sdot:hover{
+            background: rgba(0, 0, 0, 0.4);
+        }
+        .sdot i:hover {
+            transform: scale(1.2);
+            color:rgb(236, 224, 196);
+        }
+        .sdot i {
+            font-size: 32px;
+            color: #d4c4a0;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .map-section {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
             height: 30vh;
         }
+        .map-frame:hover {
+            transform: scale(1.1);
+        }
+        .map-frame {
+            width: 100%;
+            height: 100%;
+            /* border-radius: 12px;
+            border: 3px solid rgb(112, 77, 28); */
+            transition: all 0.4s ease;
+            overflow: hidden;
+        }
+
+        .location {
+            text-align: center;
+            padding-top: 3rem;
+        }
+
+        .adw {
+            font-family: 'Marcellus', serif;
+            font-size: 1.1rem;
+            line-height: 1.6;
+            color: #d4c4a0;
+            display: block;
+            margin-bottom: 25px;
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7);
+        }
+
+        .cr {
+            font-family: 'Cinzel', serif;
+            font-size: 0.9rem;
+            color: #a68b5b;
+            text-transform: uppercase;
+            border-top: 1px solid #8b4513;
+            padding-top: 15px;
+            display: inline-block;
+        }
+
+        @media (max-width: 968px) {
+            .footer-container {
+                grid-template-columns: 1fr;
+                gap: 10px;
+                text-align: center;
+                width: 85vw;
+            }
+            .footer {
+                padding: 30px;
+            }
+            #tag {
+                font-size: 2.2rem;
+            }
+            .map-section{
+                margin-left: 3rem;
+            }
+            .map-frame {
+                max-width: 100%;
+                max-height: 200px;
+                border: none;
+                box-shadow: none;
+            } 
+        }
+
+        @media (max-width: 640px) {
+            #tag {
+                font-size: 1.8rem;
+            }
+            .sdot {
+                width: 45px;
+                height: 45px;
+            }
+            .social {
+                gap: 2rem;
+            }
+            .adw {
+                font-size: 1rem;
+            }
+            .location{
+                margin-bottom: 1rem;
+            }
+            .map-section{
+                margin-left: 4px;
+            }
+        }
+
+
+
+
 
         @media (max-width: 1100px) {
             .normal-nav img{
