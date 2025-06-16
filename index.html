@@ -17,11 +17,13 @@
         <style>
             @import url('https://fonts.googleapis.com/css2?family=Marcellus&display=swap');
             @import url('https://fonts.googleapis.com/css2?family=Gideon+Roman&display=swap');
+            @import url('https://fonts.googleapis.com/css2?family=Play&display=swap');
 
             * {
                 margin: 0;
                 padding: 0;
                 overflow-x: hidden;
+                scroll-behavior: smooth ;
             }
 
             body {
@@ -220,10 +222,11 @@
             }
 
             .countdown span {
-                font-size: 2.5vw;
+                font-size: 2.3vw;
                 font-weight: bold;
                 width: 6vw;
                 color: rgb(216, 213, 208);
+                font-family: "Gideon Roman";
             }
 
             .label {
@@ -231,7 +234,7 @@
                 margin-top: 5px;
                 font-weight: bold;
                 color: rgb(216, 213, 208);
-                font-family: "Marcellus";
+                font-family: 'Times New Roman', Times, serif;
             }
 
             .colon {
@@ -443,6 +446,7 @@
             footer {
                 height: 30vh;
             }
+            
 
             @media (max-width: 1100px) {
                 .normal-nav img {
@@ -456,7 +460,7 @@
                 }
 
                 .normal-nav img {
-                    width: 12vw;
+                    width: 8vw;
                 }
 
                 .hideOnMobile {
@@ -582,11 +586,11 @@
                     height: 100%;
                 }
                 .time-unit {
-                    width: 15vw;
+                    width: 18vw;
                 }
 
                 .countdown span {
-                    font-size: 18px;
+                    font-size: 20px;
                     font-weight: bold;
                     width: 10vw;
                     color: rgb(216, 213, 208);
@@ -597,7 +601,7 @@
                     margin-top: 5px;
                     font-weight: bold;
                     color: rgb(216, 213, 208);
-                    width: 15vw;
+                    width: 18vw;
                 }
 
                 .colon {
@@ -610,7 +614,7 @@
             @media (max-width: 500px) {
                 .write-section {
                     overflow: hidden;
-                    height: 200vh;
+                    height: 150vh;
                     z-index: 3;
                 }
 
@@ -635,13 +639,13 @@
                 }
 
                 #write-1 {
-                    font-size: 34px;
+                    font-size: 24px;
                     padding-bottom: 1.5rem;
                     text-align: left;
                 }
 
                 #write-2 {
-                    font-size: 30px;
+                    font-size: 20px;
                 }
             }
 
@@ -659,8 +663,9 @@
                     height: 75vh;
                 }
                 .hero button {
-                    width: 25vw;
+                    width: 30vw;
                     font-size: 14px;
+                    height: 5vh;
                 }
                 .tag{
                     font-size: 6vw;
@@ -732,7 +737,7 @@
                     box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
                 }
                 .card:hover img{
-                    filter: brightness(0.3);
+                    filter: brightness(0.2) !important;
                 }
 
                 .detail {
@@ -806,7 +811,7 @@
                 }
 
                 .detail {
-                    font-size: 5vw;
+                    font-size: 3vw;
                 }
             }
 
@@ -826,7 +831,7 @@
         </div>
         </ul>
         <ul class="hamburger">
-            <li onclick="hideSidebar()"><a href="#"><span class="material-symbols-outlined size-40">close</span></a></li>
+            <li onclick="hideSidebar()"><a href=""><span class="material-symbols-outlined size-40">close</span></a></li>
             <li><a href="index.html" class="underline-ani"><img src="assets/logowhite.png" alt=""></a></li>
             <li><a href="index.html" class="underline-ani">Home</a></li>
             <li><a href="#" class="underline-ani">Brochure</a></li>
@@ -884,7 +889,7 @@
                 }
             }
 
-            updateThreeD(); // force first update
+            updateThreeD();
             window.addEventListener('resize', updateThreeD);
         </script>
 
@@ -1017,35 +1022,35 @@
             <div class="card">
                 <div id="details">
                     <div class="event-name center">Veni Vidi Vici</div>
-                    <div class="detail">Greek art focused on idealism and harmony.</div>
+                    <div class="detail"><span style="font-style: italic;">Play like a Roman. Win like a Caesar.</span><br><br>Online - Team of 5+1</div>
                 </div>
                 <img src="assets/events.png">
             </div>
             <div class="card">
                 <div id="details">
                     <div class="event-name right" id="vor">Visions of Rome</div>
-                    <div class="detail">Roman art was realistic and architectural.</div>
+                    <div class="detail"><span style="font-style: italic;">A Digital Renaissance.</span></div>
                 </div>
                 <img src="assets/bg.png">
             </div>
             <div class="card">
                 <div id="details">
-                    <div class="event-name left" style="top: 45%;">DuxDesign</div>
-                    <div class="detail">Gothic featured verticality and light.</div>
+                    <div class="event-name left" style="top: 40%;">DuxDesign</div>
+                    <div class="detail"><span style="font-style: italic;">Voice of Rome.</span> <br><br></div>
                 </div>
                 <img src="assets/duxdesign.png">
             </div>
             <div class="card">
                 <div id="details">
                     <div class="event-name right" id="lol">Legion of Laughs</div>
-                    <div class="detail">Renaissance art revived classical forms.</div>
+                    <div class="detail"><span style="font-style: italic;">Marching straight into your funny bone.</span></div>
                 </div>
                 <img src="assets/eventlol.png">
             </div>
             <div class="card">
                 <div id="details">
                     <div class="event-name left" id="ic">Imago Comica</div>
-                    <div class="detail">Baroque was dramatic and rich in contrast.</div>
+                    <div class="detail"><span style="font-style: italic;">Don't upset uncle Stan Lee.</span></div>
                 </div>
                 <img src="assets/bg.png">
             </div>

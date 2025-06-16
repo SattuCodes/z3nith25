@@ -12,7 +12,7 @@
       padding: 0;
     }
     body {
-      background-color: #ffff;
+      background-color: #281822;
       margin: 0;
       overflow-x: hidden;
     }
@@ -41,7 +41,6 @@
         height: auto;
         padding-left: 5vw;
     }
-
     #links {
         display: flex;
         flex-direction: row;
@@ -90,13 +89,12 @@
         display: none;
         flex-direction: column;
         align-items: center;
-        justify-content: space-evenly;
+        justify-content: center;
+        gap: 7vw;
     }
-
-    .hamburger li {
-        width: 100%;
+    .hamburger li a img{
+        width: 35%;
     }
-
     .hamburger a {
         width: 100%;
     }
@@ -108,7 +106,7 @@
       display: flex;
       justify-content: center;
       flex-wrap: wrap;
-      margin-top: 12vw;
+      margin-top: 10vw;
       gap: 11vw;
     }
 
@@ -135,7 +133,7 @@
     }
 
     .name {
-      margin-top: 0.5vw;
+      margin-top: 1vw;
       font-family: Marcellus;
       font-weight: 700;
       font-size: 1.3vw;
@@ -178,6 +176,7 @@
       display: block; 
     }
     .box:hover .name{
+      margin-top: 1vw;
       font-size: 1.5vw;
     }
     .heading{
@@ -185,49 +184,63 @@
     }
 
     @media only screen and (max-device-width: 1100px) {
-
+      .heading{
+        display: block;
+        display: flex;
+        justify-content: center;
+        background-color: #fff;
+        padding-top: 10vh;
+        font-size: 10vw;
+        font-family: "Marcellus";
+        font-weight: 600;
+        margin-top: 9vh;
+      }
       .container {
         display: flex;
         flex-wrap: wrap;
       }
 
       .box {
-        width: 25vw;
-        height: 25vw;
+        width: 40vw;
+        height: 35vw;
         margin: 0vw 5vw 0vw 5vw;
       }
 
       .profile {
-        margin: 0.1vw 0vw 0.2vw 5.2vw;
-        height: 14vw;
-        width: 14vw;
+        height: 12vw;
+        width: 12vw;
       }
 
       .name {
-        margin-top: -0.5vw;
-        font-size: 2.5vw;
+        margin-top: 0.5vw;
+        font-size: 2vw;
       }
 
       .title {
         margin-top: 0.3vw;
-        font-size: 2vw;
+        font-size: 1.75vw;
       }
 
       .description {
-        font-size: 1.5vw;
-        margin-top: 0.3vw;
+        font-size: 1.25vw;
+        margin-top: 0.7vw;
+        width: 30vw;
+
       }
 
       .box:hover {
         width: 44vw;
-        height: 25vw;
-        margin: 0vw -4.5vw 0vw -4.5vw;
+        height: 35vw;
+        margin: 0vw 0.5vw 0vw 0.5vw;
+      }
+      .box:hover .name{
+        font-size: 2.5vw;
       }
 
       .box:hover .profile {
-        margin: -10vw 0vw 0vw 11.8vw;
-        height: 20vw;
-        width: 20vw;
+        margin: -20vw 0vw 0vw 0vw;
+        height: 18vw;
+        width: 18vw;
       }
     }
 
@@ -273,9 +286,9 @@
       }
 
       .description {
-        margin-top: 2.5vw;
+        margin-top: 5.5vw;
         font-size: 2.5vw;
-        width: 50vw;
+        width: 60vw;
       }
 
       .heading{
@@ -285,79 +298,100 @@
         background-color: #fff;
         padding-top: 10vh;
         font-size: 15vw;
-        font-family: Marcellus;
+        font-family: "Marcellus";
         font-weight: 600;
         margin-top: 9vh;
       }
     }
     @media (max-width: 1100px) {
-            .normal-nav img{
-                width: 10vw;
-            }
+        .normal-nav img {
+            width: 10vw;
         }
-        @media (max-width: 1088px) {
-            .size-40{
-                font-size: 4vw;
-            }
-            .normal-nav img{
-                width: 8vw;
-            }
-            .hideOnMobile {
-                display: none;
-            }
-            .menu-button {
-                display: block;
-            }
-            .size-40{
-                font-size: 8.5vw;
-                overflow-y: hidden;
-            }
-        }
-        @media (max-width: 600px) {
-            .normal-nav{
-                height: 9vh;
-            }
-            .normal-nav img{
-                width: 12vw;
-                padding-left: 5vw;
-            }
-            .size-40{
-                font-size: 8.5vw;
-                overflow-y: hidden;
-            }
-            #links{
-                padding-right: 5vw;
-            }
-            .nav{
-                height: 9vh;
-            }
-        }
+    }
+
+    @media (max-width: 1088px) {
+      .size-40 {
+          font-size: 4vw;
+      }
+
+      .normal-nav img {
+          width: 8vw;
+      }
+
+      .hideOnMobile {
+          display: none;
+      }
+
+      .menu-button {
+          display: block;
+      }
+
+      .size-40 {
+          font-size: 8.5vw;
+          overflow-y: hidden;
+      }
+    }
+
+    @media (max-width: 500px) {
+      .normal-nav {
+          height: 9vh;
+      }
+
+      .normal-nav img {
+          width: 12vw;
+          padding-left: 5vw;
+      }
+
+      .size-40 {
+          font-size: 8.5vw;
+          overflow-y: hidden;
+      }
+
+      #links {
+          padding-right: 5vw;
+      }
+
+      .nav {
+          height: 9vh;
+      }
+    }
   </style>
 </head>
 <body>
   <section class="nav">
         <ul class="normal-nav">
-        <a href="index.html"><img src="assets/logoblack.png" alt=""></a>
+        <a href="index.html"><img src="assets/logowhite.png" alt=""></a>
         <div id="links">
             <li class="underline-ani hideOnMobile"><a href="index.html">Home</a></li>
             <li class="underline-ani hideOnMobile"><a href="#brochure">Brochure</a></li>
             <li class="underline-ani hideOnMobile"><a href="team.html">Omáda</a></li>
             <li class="underline-ani hideOnMobile"><a href="video.html">Videos</a></li>
-            <li class="underline-ani hideOnMobile"><a href="#treasury">The Treasury</a></li>
+            <li class="underline-ani hideOnMobile"><a href="index.html#treasury">The Treasury</a></li>
             <li class="menu-button" onclick="showSidebar()"><a href="#"><span class="material-symbols-outlined size-40">menu</span></a></li>
         </div>
         </ul>
         <ul class="hamburger">
-        <li onclick="hideSidebar()"><a href="#"><span class="material-symbols-outlined size-40">close</span></a></li>
-        <li><a href="#" class="underline-ani">Home</a></li>
-        <li><a href="#" class="underline-ani">Brochure</a></li>
-        <li><a href="#" class="underline-ani">Omáda</a></li>
-        <li><a href="#" class="underline-ani">Videos</a></li>
-        <li><a href="#" class="underline-ani">The Treasury</a></li>
+            <li onclick="hideSidebar()"><a href="#"><span class="material-symbols-outlined size-40">close</span></a></li>
+            <li><a href="index.html" class="underline-ani"><img src="assets/logowhite.png" alt=""></a></li>
+            <li><a href="index.html" class="underline-ani">Home</a></li>
+            <li><a href="#" class="underline-ani">Brochure</a></li>
+            <li><a href="team.html" class="underline-ani">Omáda</a></li>
+            <li><a href="video.html" class="underline-ani">Videos</a></li>
+            <li><a href="#treasury-section" class="underline-ani">The Treasury</a></li>
         </ul>
     </section>
+    <script>
+        function showSidebar() {
+        document.querySelector('.hamburger').style.display = 'flex';
+        }
+
+        function hideSidebar() {
+        document.querySelector('.hamburger').style.display = 'none';
+        }
+    </script>
+
   <div class="heading">Omás</div>
-  <div class="container">
+  <div class="container" id="main">
     <div class="box">
       <img src="assets/vice.png" class="profile">
       <div class="name">Ms. Mohini Arora</div>
@@ -392,7 +426,7 @@
       <div class="description">badmos geng on top 🔝</div>
     </div>
   </div>
-
+  <hr style="margin-top: 10vw; height: 0.5vh; background-color: black;">
   <div class="container">
     <div class="box">
       <img src="assets/kabie.png" class="profile">
@@ -410,7 +444,7 @@
       <img src="assets/gurchetan.png" class="profile">
       <div class="name">Gurchetan Singh</div>
       <div class="title">Vice President</div>
-      <div class="description"></div>
+      <div class="description">Regreted downloading consciousness since 2009.</div>
     </div>
   </div>
 

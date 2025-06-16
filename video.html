@@ -20,92 +20,90 @@
     }
 
     .nav {
-      height: 13vh;
-      position: fixed;
-      top: 0;
-      z-index: 100;
-    }
+                height: 13vh;
+                position: fixed;
+                top: 0;
+                z-index: 100;
+            }
 
-    .normal-nav {
-      display: flex;
-      list-style-type: none;
-      background: rgba(0, 0, 0, 0.3);
-      backdrop-filter: blur(3px);
-      position: fixed;
-      top: 0;
-      width: 100vw;
-      height: 13vh;
-      justify-content: space-between;
-      align-items: center;
-    }
+            .normal-nav {
+                display: flex;
+                list-style-type: none;
+                background: rgba(0, 0, 0, 0.3);
+                backdrop-filter: blur(3px);
+                position: fixed;
+                top: 0;
+                width: 100vw;
+                height: 13vh;
+                justify-content: space-between;
+                align-items: center;
+            }
 
-    .normal-nav img {
-      width: 5vw;
-      height: auto;
-      padding-left: 5vw;
-    }
+            .normal-nav img {
+                width: 5vw;
+                height: auto;
+                padding-left: 5vw;
+            }
+            #links {
+                display: flex;
+                flex-direction: row;
+                gap: 3vw;
+                padding-right: 5vw;
+            }
 
-    #links {
-      display: flex;
-      flex-direction: row;
-      gap: 3vw;
-      padding-right: 5vw;
-    }
+            li a {
+                color: white;
+                text-align: center;
+                font-family: "Marcellus", serif;
+                font-size: 27px;
+                text-decoration: none;
+            }
 
-    li a {
-      color: white;
-      text-align: center;
-      font-family: "Marcellus", serif;
-      font-size: 27px;
-      text-decoration: none;
-    }
+            .underline-ani {
+                display: inline-block;
+                position: relative;
+            }
 
-    .underline-ani {
-      display: inline-block;
-      position: relative;
-    }
+            .underline-ani::after {
+                content: '';
+                position: absolute;
+                width: 100%;
+                transform: scaleX(0);
+                height: 2px;
+                bottom: 0;
+                left: 0;
+                background-color: #ffffff;
+                transition: transform 0.3s ease-out;
+            }
 
-    .underline-ani::after {
-      content: '';
-      position: absolute;
-      width: 100%;
-      transform: scaleX(0);
-      height: 2px;
-      bottom: 0;
-      left: 0;
-      background-color: #ffffff;
-      transition: transform 0.3s ease-out;
-    }
+            .underline-ani:hover::after {
+                transform: scaleX(1);
+            }
 
-    .underline-ani:hover::after {
-      transform: scaleX(1);
-    }
-
-    .hamburger {
-      position: fixed;
-      top: 0;
-      right: 0;
-      height: 100vh;
-      width: 100vw;
-      background-color: rgba(0, 0, 0, 0.6);
-      backdrop-filter: blur(12px);
-      list-style: none;
-      display: none;
-      flex-direction: column;
-      align-items: center;
-      justify-content: space-evenly;
-    }
-
-    .hamburger li {
-      width: 100%;
-    }
-
-    .hamburger a {
-      width: 100%;
-    }
+            .hamburger {
+                position: fixed;
+                top: 0;
+                right: 0;
+                height: 100vh;
+                width: 100vw;
+                background-color: rgba(0, 0, 0, 0.6);
+                backdrop-filter: blur(12px);
+                list-style: none;
+                display: none;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                gap: 7vw;
+            }
+            .hamburger li a img{
+                width: 35%;
+            }
+            .hamburger a {
+                width: 100%;
+            }
 
     .menu-button {
-      display: none;
+        display: none;
     }
 
     .slider {
@@ -269,44 +267,54 @@
       }
     }
     @media (max-width: 1100px) {
-      .normal-nav img{
-        width: 10vw;
+        .normal-nav img {
+            width: 10vw;
         }
-      }
+    }
+
     @media (max-width: 1088px) {
-      .size-40{
+      .size-40 {
           font-size: 4vw;
       }
-      .normal-nav img{
+
+      .normal-nav img {
           width: 8vw;
       }
+
       .hideOnMobile {
           display: none;
       }
+
       .menu-button {
           display: block;
       }
-      .size-40{
+
+      .size-40 {
           font-size: 8.5vw;
           overflow-y: hidden;
       }
     }
-    @media (max-width: 600px) {
-      .normal-nav{
+
+    @media (max-width: 500px) {
+      .normal-nav {
           height: 9vh;
       }
-      .normal-nav img{
+
+      .normal-nav img {
           width: 12vw;
           padding-left: 5vw;
       }
-      .size-40{
+
+      .size-40 {
           font-size: 8.5vw;
           overflow-y: hidden;
       }
-      #links{
+
+      #links {
           padding-right: 5vw;
       }
-      .nav{
+
+      .nav {
           height: 9vh;
       }
     }
@@ -314,25 +322,36 @@
 </head>
 <body>
   <section class="nav">
-    <ul class="normal-nav">
-      <a href="index.html"><img src="assets/logowhite.png" alt=""></a>
-      <div id="links">
-        <li class="underline-ani hideOnMobile"><a href="index.html">Home</a></li>
-        <li class="underline-ani hideOnMobile"><a href="#brochure">Brochure</a></li>
-        <li class="underline-ani hideOnMobile"><a href="team.html">Omáda</a></li>
-        <li class="underline-ani hideOnMobile"><a href="video.html">Videos</a></li>
-        <li class="underline-ani hideOnMobile"><a href="#treasury">The Treasury</a></li>
-        <li class="menu-button" onclick="showSidebar()"><a href="#"><span class="material-symbols-outlined size-40">menu</span></a></li>
-      </div>
-    </ul>
-    <ul class="hamburger">
-      <li onclick="hideSidebar()"><a href="#"><span class="material-symbols-outlined size-40">close</span></a></li>
-      <li><a href="index.html" class="underline-ani">Home</a></li>
-      <li><a href="#" class="underline-ani">Brochure</a></li>
-      <li><a href="team.html" class="underline-ani">Omáda</a></li>
-      <li><a href="video.html" class="underline-ani">Videos</a></li>
-      <li><a href="#treasury-section" class="underline-ani">The Treasury</a></li>
-  </section>
+        <ul class="normal-nav">
+        <a href="index.html"><img src="assets/logowhite.png" alt=""></a>
+        <div id="links">
+            <li class="underline-ani hideOnMobile"><a href="index.html">Home</a></li>
+            <li class="underline-ani hideOnMobile"><a href="#brochure">Brochure</a></li>
+            <li class="underline-ani hideOnMobile"><a href="team.html">Omáda</a></li>
+            <li class="underline-ani hideOnMobile"><a href="video.html">Videos</a></li>
+            <li class="underline-ani hideOnMobile"><a href="index.html#treasury">The Treasury</a></li>
+            <li class="menu-button" onclick="showSidebar()"><a href="#"><span class="material-symbols-outlined size-40">menu</span></a></li>
+        </div>
+        </ul>
+        <ul class="hamburger">
+            <li onclick="hideSidebar()"><a href="#"><span class="material-symbols-outlined size-40">close</span></a></li>
+            <li><a href="index.html" class="underline-ani"><img src="assets/logowhite.png" alt=""></a></li>
+            <li><a href="index.html" class="underline-ani">Home</a></li>
+            <li><a href="#" class="underline-ani">Brochure</a></li>
+            <li><a href="team.html" class="underline-ani">Omáda</a></li>
+            <li><a href="video.html" class="underline-ani">Videos</a></li>
+            <li><a href="#treasury-section" class="underline-ani">The Treasury</a></li>
+        </ul>
+    </section>
+    <script>
+        function showSidebar() {
+        document.querySelector('.hamburger').style.display = 'flex';
+        }
+
+        function hideSidebar() {
+        document.querySelector('.hamburger').style.display = 'none';
+        }
+    </script>
 
   <div class="hero">
     <div class="container">
@@ -363,13 +382,6 @@
   </div>
 
   <script>
-    function showSidebar() {
-      document.querySelector('.hamburger').style.display = 'flex';
-    }
-
-    function hideSidebar() {
-      document.querySelector('.hamburger').style.display = 'none';
-    }
 
     let x = document.querySelectorAll('.slider .item');
     let a = document.getElementById('next');
