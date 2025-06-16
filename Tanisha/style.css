@@ -224,7 +224,7 @@
             margin-bottom: -4vh;
             height: 6vh;
             background-image: linear-gradient(rgba(0, 0, 0, 0), rgb(36, 13, 16));
-            backdrop-filter: blur(10px);
+            backdrop-filter: blur(3px);
         }
         .transition-2 {
             margin-top: -3vh;
@@ -244,16 +244,16 @@
             margin-top: -3vh;
             margin-bottom: -1vh;
             height: 4vh;
-            background-image: linear-gradient(rgb(149,112,131), #be9b7b );
+            background-image: linear-gradient(rgb(149,112,131), rgb(55, 21, 36) );
             backdrop-filter: blur(4px);
         }
-        .transition-5 {
-            margin-top: -3vh;
-            margin-bottom: -1vh;
+        /* .transition-5 {
             height: 4vh;
-            background-image: linear-gradient(#be9b7b, rgb(55, 21, 36));
-            backdrop-filter: blur(4px);
-        }
+            margin-top: -1vh;
+            margin-bottom: -3vh;
+            background-image: linear-gradient(rgb(55, 21, 36), rgba(0,0,0,0.01));
+            backdrop-filter: blur(2px);
+        } */
         .write-section {
             height: 87vh;
             width: auto;
@@ -380,23 +380,9 @@
             transform: translateY(-50%);
         }
 
-        .treasury-section {
-            background: rgb(55, 21, 36);
-            height: 87vh;
-        }
-        .treasury-title{
-            margin-top: 2rem;
-            font-size: 40px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
-            color: white;
-            font-family: Marcellus, serif;
-        }
-        
+
         .sponsors-section {
-            background: #be9b7b;
+            background: rgb(55, 21, 36);
             height: 87vh;
         }
         .sponsors-title{
@@ -406,8 +392,104 @@
             justify-content: center;
             align-items: center;
             text-align: center;
-            color: rgb(55, 21, 36);
+            color: rgb(231, 211, 220);
             font-family: Marcellus, serif;
+        }
+        .sponsors-section {
+            background: rgb(55, 21, 36);
+            height: 87vh;
+        }
+        .sponsors-title{
+            margin-top: 4rem;
+            font-size: 48px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            color: rgb(231, 211, 220);
+            font-family: Marcellus, serif;
+        }
+        
+        .treasury-section{
+            height: 87vh;
+            position: relative;
+        }
+        .carousel {
+            background:rgba(0,0,0,0.5);
+            padding: 20px;
+            border-radius: 10px; 
+        }
+        @media (min-width: 1200px) {
+            .carousel {
+                width: 60vw;
+                height: 60vh;
+            }
+        }
+        .slide {
+            display: none;
+            width: 100%;
+            height: 100%;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .slide.active {
+            display: flex;
+        }
+
+        .slide img {
+            max-width: calc(100% - 40px);
+            max-height: calc(100% - 40px);
+            /* border-radius: 10px; */
+        }
+
+        .carousel-container {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+        .arrow{
+            border: none;
+            cursor: pointer;
+            color:rgba(255, 206, 142,0.8);
+            background-color:rgba(0, 0, 0, 0.8);
+            font-family: Marcellus, serif;
+            width: 35px;
+            height: 60px;
+            border-radius: 40px;
+            font-size: 44px;
+            transition: 0.5s;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .arrow:hover{
+            color:rgb(0,0,0,0.8);
+            background:rgba(255, 206, 142, 0.7);
+        }
+        .dots {
+            position: absolute;
+            bottom: 6%;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        .dot {
+            display: inline-block;
+            width: 12px;
+            height: 12px;
+            background: rgba(255, 206, 142, 0.5);
+            border-radius: 50%;
+            margin: 0 5px;
+            cursor: pointer;
+        }
+
+        .dot.active {
+            background: rgba(0,0,0,0.5);
         }
         
         .footer {

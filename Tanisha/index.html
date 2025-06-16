@@ -212,14 +212,77 @@
         </div>
     </section>
     <!-- SPONSORS SECTION END -->
-    <div class="transition-5"></div>
+    <!-- <div class="transition-5"></div> -->
+    
     <!-- TREASURY SECTION START -->
-     <section class= "treasury-section">
-        <div class="treasury-title">
-            <span>Treasury</span>
+     <section class= "treasury-section" style="background-image: url(assets/treasury.PNG); background-size: cover; background-repeat: no-repeat;">
+        
+        <div class="carousel-container">
+            <button class="arrow" onclick="changeSlide(-1)">‹</button>
+            <div class="carousel">
+                <div class="slide active">
+                    <img src="assets/bg.png">
+                </div>
+                 <div class="slide ">
+                    <img src="assets/bg1.png">
+                </div>
+                 <div class="slide ">
+                    <img src="assets/lgo.png">
+                </div>
+                 <div class="slide ">
+                    <img src="assets/logo.png">
+                </div>
+                 <div class="slide ">
+                    <img src="assets/logowhite.png">
+                </div>
+            </div>
+            <button class="arrow" onclick="changeSlide(1)">›</button>
+        </div>
+        
+        <div class="dots">
+            <span class="dot active" onclick="currentSlide(1)"></span>
+            <span class="dot" onclick="currentSlide(2)"></span>
+            <span class="dot" onclick="currentSlide(3)"></span>
+            <span class="dot" onclick="currentSlide(4)"></span>
+            <span class="dot" onclick="currentSlide(5)"></span>
         </div>
      </section>
+     <script>
+        let slideIndex = 0;
+        const slides = document.querySelectorAll('.slide');
+        const dots = document.querySelectorAll('.dot');
+
+        function showSlide(index) {
+            //hide all
+            slides.forEach(slide => slide.classList.remove('active'));
+            dots.forEach(dot => dot.classList.remove('active'));
+            
+            // show current
+            slides[index].classList.add('active');
+            dots[index].classList.add('active');
+        }
+        function changeSlide(direction) {
+            slideIndex += direction;
+            
+            if (slideIndex >= slides.length) {
+                slideIndex = 0;
+            } else if (slideIndex < 0) {
+                slideIndex = slides.length - 1;
+            }
+            
+            showSlide(slideIndex);
+        }
+        function currentSlide(index) {
+            slideIndex = index - 1;
+            showSlide(slideIndex);
+        }
+
+        setInterval(() => {
+            changeSlide(1);
+        }, 5000); //every 5 sec
+    </script>
     <!-- TREASURY SECTION END -->
+
     <footer class="footer">
         <div class="footer-container">
             <div class="tag-section">
