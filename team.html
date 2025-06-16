@@ -107,12 +107,12 @@
       justify-content: center;
       flex-wrap: wrap;
       margin-top: 10vw;
-      gap: 11vw;
+      gap: 8vw;
     }
 
     .box {
-      width: 21vw;
-      height: 18vw;
+      width: 23vw;
+      height: 20vw;
       margin: 0vw 2vw 0vw 2vw;
       background-position: center;
       background-size: contain;
@@ -139,6 +139,7 @@
       font-size: 1.3vw;
       text-align: center;
       transition: all 0.3s;
+      color: #48192e;
     }
 
     .title {
@@ -148,22 +149,25 @@
       font-weight: 500;
       text-align: center;
       transition: all 0.3s;
+      color: #281822;
     }
 
     .description {
       font-family: Marcellus;
-      font-size: 0.8vw;
+      font-size: 0.9vw;
       text-align: center;
       margin-top: 0.7vw;
       display: none;
       transition: all 0.3s;
       width: 18vw;
+      color: #48192e;
+      font-style: italic;
     }
 
     .box:hover {
       width: 26.5vw;
-      height: 18vw;
-      margin: 0vw -0.75vw 0vw -0.75vw;
+      height: 20vw;
+      margin: 0vw 0.25vw 0vw 0.25vw;
     }
 
     .box:hover .profile {
@@ -181,6 +185,9 @@
     }
     .heading{
       display:none;
+    }
+    #main{
+      margin-top: 30vh;
     }
 
     @media only screen and (max-device-width: 1100px) {
@@ -245,6 +252,9 @@
     }
 
     @media only screen and (max-device-width: 800px) {
+      #main{
+        margin-top: 10vh !important;
+      }
       .container {
         gap: 16vw;
         flex-direction: column;
@@ -252,8 +262,8 @@
       }
 
       .box {
-        width: 60vw;
-        height: 60vw;
+        width: 80vw;
+        height: 65vw;
       }
 
       .profile {
@@ -264,7 +274,7 @@
 
       .box:hover {
         width: 88vw;
-        height: 60vw;
+        height: 65vw;
         margin: 0vw 0vw 0vw 0vw;
       }
 
@@ -275,19 +285,22 @@
       }
       .name {
         margin-top: 1vw;
-        font-size: 4.2vw;
+        font-size: 5vw;
       }
       .box:hover .name{
-        font-size: 4.5vw;
+        font-size: 4vw;
       }
       .title {
         margin-top: 0.5vw;
-        font-size: 3vw;
+        font-size: 4vw;
+      }
+      .box:hover .title{
+        font-size: 3.25vw;
       }
 
       .description {
         margin-top: 5.5vw;
-        font-size: 2.5vw;
+        font-size: 3vw;
         width: 60vw;
       }
 
@@ -295,12 +308,13 @@
         display: block;
         display: flex;
         justify-content: center;
-        background-color: #fff;
+        background-color: #281822;
         padding-top: 10vh;
         font-size: 15vw;
         font-family: "Marcellus";
         font-weight: 600;
         margin-top: 9vh;
+        color: #c59c79;
       }
     }
     @media (max-width: 1100px) {
@@ -393,10 +407,10 @@
   <div class="heading">Omás</div>
   <div class="container" id="main">
     <div class="box">
-      <img src="assets/vice.png" class="profile">
+      <img src="assets/maam.png" class="profile">
       <div class="name">Ms. Mohini Arora</div>
-      <div class="title">Event Director</div>
-      <div class="description"></div>
+      <div class="title">Vice Principal <br> HOD - Computer Science</div>
+      <div class="description">Mohini Ma'am to us is a teacher, a cosmic force embodying a sense of duty, a disruptive genius, a trendsetter, a trailblazer or to sum it up in a word a mother.</div>
     </div>
     <div class="box">
       <img src="assets/priyankamaam.png" class="profile">
@@ -420,13 +434,13 @@
       <div class="description">Badmashi ni mittar</div>
     </div>
     <div class="box">
-      <img src="assets/sattu-removebg-preview.png" class="profile">
+      <img src="assets/sattu.png" class="profile">
       <div class="name">Satyam Tiwari</div>
       <div class="title">PR Head</div>
       <div class="description">badmos geng on top 🔝</div>
     </div>
   </div>
-  <hr style="margin-top: 10vw; height: 0.5vh; background-color: black;">
+  <hr style="margin-top: 15vh; margin-bottom: 15vh; height: 0.5vh; background-color: #c59c79; border: none;">
   <div class="container">
     <div class="box">
       <img src="assets/kabie.png" class="profile">
@@ -441,82 +455,87 @@
       <div class="description">On a mission to understand the universe, despite it's ongoing refusal to co-operate.</div>
     </div>
     <div class="box">
-      <img src="assets/gurchetan.png" class="profile">
-      <div class="name">Gurchetan Singh</div>
+      <img src="assets/ayush.png" class="profile">
+      <div class="name">Ayush</div>
       <div class="title">Vice President</div>
-      <div class="description">Regreted downloading consciousness since 2009.</div>
+      <div class="description">A certified yapper who could probably talk to a wall, a low-key autodidact who loves brainrot. Spends hours in CS:GO and Roblox, and is nonchalant while waiting for the glory days.</div>
     </div>
   </div>
 
     <div class="container">
     <div class="box">
+      <img src="assets/gurchetan.png" class="profile">
+      <div class="name">Gurchetan Singh</div>
+      <div class="title">Website Manager</div>
+      <div class="description">Regreted downloading consciousness since 2009.</div>
+    </div>
+    <div class="box">
       <img src="assets/tanisha.png" class="profile">
       <div class="name">Tanisha</div>
-      <div class="title">Website Manager</div>
-      <div class="description"></div>
+      <div class="title">Event Lead (Legion of Laughs)</div>
+      <div class="description">A full time servant to a very judgmental orange car with a thing for f1, paino, and gaming.</div>
     </div>
     <div class="box">
-      <img src="assets/ayushi.png" class="profile">
-      <div class="name">Ayushi</div>
-      <div class="title">Event Lead ()</div>
-      <div class="description"></div>
-    </div>
-    <div class="box">
-      <img src="assets/ritika.png" class="profile">
-      <div class="name">Ritika</div>
-      <div class="title">Event Lead (Visions of Rome)</div>
-      <div class="description">Ritika is part artist, part debater, equal parts clumsy and clever. A Potterhead, sitcom addict, and creative chaos in motion—with a plan to be the next Prime Minister.</div>
+      <img src="assets/naman.png" class="profile">
+      <div class="name">Naman Jain</div>
+      <div class="title">Event Lead (Legion of Laughs)</div>
+      <div class="description">He has a strong interest in gaming, motorsport, photography, and tech, combining creativity with a love for innovation and speed.</div>
     </div>
   </div>
 
   <div class="container">
     <div class="box">
-      <img src="assets/naman.png" class="profile">
-      <div class="name">Naman</div>
-      <div class="title">Event Lead (Legion of Laughs)</div>
-      <div class="description">He has a strong interest in gaming, motorsport, photography, and tech, combining creativity with a love for innovation and speed.</div>
+      <img src="assets/kabie2.png" class="profile">
+      <div class="name">Ritika Trivedi</div>
+      <div class="title">Event Lead (Visions of Rome)</div>
+      <div class="description">Ritika is part artist, part debater, equal parts clumsy and clever. A Potterhead, sitcom addict, and creative chaos in motion—with a plan to be the next Prime Minister.</div>
+    </div>
+    <div class="box">
+      <img src="assets/ayushi.png" class="profile">
+      <div class="name">Ayushi</div>
+      <div class="title">Event Lead (Visions of Rome)</div>
+      <div class="description">An typical graphic designer and video editor, is individual who finds solace in music and cherishes her sleep deeply.</div>
     </div>
     <div class="box">
       <img src="assets/raghav.png" class="profile">
-      <div class="name">Raghav</div>
-      <div class="title">Event Lead ()</div>
-      <div class="description"></div>
-    </div>
-    <div class="box">
-      <img src="assets/ayanshree.png" class="profile">
-      <div class="name">Ayanshree</div>
-      <div class="title">Event Lead ()</div>
-      <div class="description"></div>
+      <div class="name">Raghav Mendiratta</div>
+      <div class="title">Event Lead (Imago Comica)</div>
+      <div class="description">Can solve equations, play chess, and still manage to forget his water bottle.</div>
     </div>
   </div>
-
     <div class="container">
-    <div class="box">
-      <img src="assets/divyansh.png" class="profile">
-      <div class="name">Divyansh Pal</div>
-      <div class="title">Volunteer</div>
-      <div class="description"></div>
-    </div>
-    <div class="box">
-      <img src="assets/advika.png" class="profile">
-      <div class="name">Advika</div>
-      <div class="title">Volunteer</div>
-      <div class="description"></div>
-    </div>
-    <div class="box">
-      <img src="assets/ayush.png" class="profile">
-      <div class="name">Ayush</div>
-      <div class="title">Volunteer</div>
-      <div class="description">A certified yapper who could probably talk to a wall, who is low-key autodidact and loves brainrot.Loves spending hours in Roblox and CSGO and nonchalantly waiting for the glory days.</div>
-    </div>
+      <div class="box">
+        <img src="assets/ayanshree.png" class="profile">
+        <div class="name">Ayanshree</div>
+        <div class="title">Event Lead (TBD)</div>
+        <div class="description">INFJ, Creative, rhythmic, and probably overworking again.</div>
+      </div>
+      <div class="box">
+        <img src="assets/advika.png" class="profile">
+        <div class="name">Advika</div>
+        <div class="title">Volunteer</div>
+        <div class="description">A super friendly, curious soul lost in music, astrophysics, history, marine biology, and art. Weird (in a fun way!), refreshingly real, brimming with energy, and the kind of person you can totally be yourself around.</div>
+      </div>
+      <div class="box">
+        <img src="assets/aashima.png" class="profile">
+        <div class="name">Aashima Singh</div>
+        <div class="title">Volunteer</div>
+        <div class="description">A beginner at Z3NITH 2025, eager to explore and learn, she looks forward to discovering more about the Z3NITH experience and all it has to offer.</div>
+      </div>
   </div>
-
-    <div class="container">
+  
+    <div class="container" style="margin-bottom: 5vh;">
+      <div class="box">
+        <img src="assets/divyansh.png" class="profile">
+        <div class="name">Divyansh</div>
+        <div class="title">Volunteer</div>
+        <div class="description"></div>
+      </div>
     <div class="box">
       <img src="assets/souvagya.png" class="profile">
       <div class="name">Souvagya Shukla</div>
       <div class="title">Volunteer</div>
-      <div class="description"></div>
+      <div class="description">Just started <br>....... <br>Miles to go</div>
     </div>
     </div>
 
