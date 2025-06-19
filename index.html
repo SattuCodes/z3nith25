@@ -334,12 +334,14 @@
                 bottom: 4px;
                 color: white;
                 padding: 1rem;
-                font-size: 1.5vw;
+                font-size: 1vw;
                 transform: translateY(100%);
                 transition: all 0.3s ease;
                 border-radius: 20px;
                 top: 55%;
                 text-align: center;
+                width: 20vw;
+                box-sizing: border-box;
             }
 
             .card:hover .detail {
@@ -522,6 +524,7 @@
             width: 95vw;
             margin: 0;
             display: grid;
+            justify-content: center;
             grid-template-columns: 1fr 1fr 1fr;
         }
 
@@ -698,7 +701,7 @@
                 }
 
                 .normal-nav img {
-                    width: 8vw;
+                    width: 10vw;
                 }
 
                 .hideOnMobile {
@@ -761,6 +764,9 @@
                     .card{
                         border-radius: 10%;
                         height: 40vh;
+                        width: 30vw;
+                    }
+                    .event-name, .detail{
                         width: 30vw;
                     }
                     .threeD-mobile{
@@ -1183,7 +1189,7 @@
     </script>
 
     <section class="hero-section" style="background-image: url(assets/bg1.png); background-size: cover; background-repeat: no-repeat;">
-        <div class="update-bar">Registration for Z3NITH'25 are open <a href='#Register' style="color: wheat; background: none; font-weight: bold;">Register Now</a> <span style="color:wheat; background-color: #48192E;"></span></div>
+        <div class="update-bar">Registration for Z3NITH'25 are open <a href='https://bit.ly/z3nith2k25registration' target="_blank" style="color: wheat; background: none; font-weight: bold;">Register Now</a> <span style="color:wheat; background-color: #48192E;"></span></div>
         <div class="hero">
         <img src="assets/lgo.png"/>
         <p class="tag">Home. Sweet. Rome.</p>
@@ -1361,28 +1367,28 @@
             <div class="card">
                 <div id="details">
                     <div class="event-name right" id="vor">Visions of Rome</div>
-                    <div class="detail"><span style="font-style: italic;">A Digital Renaissance.</span></div>
+                    <div class="detail"><span style="font-style: italic;">A Digital Renaissance. <br><br>Hybrid - Team of 3</span></div>
                 </div>
                 <img src="assets/event2.png">
             </div>
             <div class="card">
                 <div id="details">
                     <div class="event-name left" style="top: 40%;">DuxDesign</div>
-                    <div class="detail"><span style="font-style: italic;">Voice of Rome.</span> <br><br></div>
+                    <div class="detail"><span style="font-style: italic;">Voice of Rome.</span> <br><br>Hybrid - Team of 2</div>
                 </div>
                 <img src="assets/duxdesign.png">
             </div>
             <div class="card">
                 <div id="details">
                     <div class="event-name right" id="lol">Legion of Laughs</div>
-                    <div class="detail"><span style="font-style: italic;">Marching straight into your funny bone.</span></div>
+                    <div class="detail"><span style="font-style: italic;">Marching straight into your funny bone. <br><br> Offline - Solo</span></div>
                 </div>
                 <img src="assets/eventlol.png">
             </div>
             <div class="card">
                 <div id="details">
                     <div class="event-name left" id="ic">Imago Comica</div>
-                    <div class="detail"><span style="font-style: italic;">Don't upset uncle Stan Lee.</span></div>
+                    <div class="detail"><span style="font-style: italic;">Don't upset uncle Stan Lee. <br><br> Submission - Team of 2</span></div>
                 </div>
                 <img src="assets/event5.png">
             </div>
@@ -1395,7 +1401,7 @@
             <span>Our Sponsors</span>
         </div>
         <img src="assets/cake_logo_white.png" alt="">
-        <img src="assets/xyz-logo-white.png" alt="" style="width: 10%; margin-top: 50px;" id="xyz">
+        <img src="assets/xyz-logo-white.png" alt="" style="width: 8%; margin-top: 50px;" id="xyz">
     </section>
         <section class= "treasury-section" style="background-image: url(assets/treasury.PNG); background-size: cover; background-repeat: no-repeat;" id="treasury">
         
