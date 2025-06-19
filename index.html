@@ -13,6 +13,7 @@
             }
             }
         </script>
+        <link rel="icon" type="image/x-icon" href="assets/futurzclub.png">
         <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"/>
         <style>
             @import url('https://fonts.googleapis.com/css2?family=Marcellus&display=swap');
@@ -520,15 +521,14 @@
             width: 95vw;
             margin: 0;
             display: grid;
-            grid-template-columns: /* 0.4fr */ 1fr 1fr 1fr;
+            grid-template-columns: 1fr 1fr 1fr;
         }
 
         .tag-section {
             text-align: center;
-            padding: 25px;
-            /* margin-left: 6vw;
-            width: 15vw; */
+            padding: 15px;
         }
+
         #tag {
             font-family: 'Cinzel', serif;
             font-size: 2.4rem;
@@ -536,7 +536,6 @@
             color: #d4c4a0;
             text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.8);
             letter-spacing: 4px;
-            margin-bottom: 1.2rem;
             overflow: hidden;
 
                 text-shadow: 0 0 2px rgba(255, 255, 255, 0.4),
@@ -578,27 +577,23 @@
         }
 
         .map-section {
-            display: flex;
-            justify-content: center;
-            align-items: center;
+            padding-top: 20px;
             overflow: hidden;
-            height: 30vh;
+            height: 22vh;
         }
         .map-frame:hover {
             transform: scale(1.1);
         }
         .map-frame {
-            width: 100%;
+            width: 90%;
             height: 100%;
-            border-radius: 12px;
-            border: 3px solid rgb(112, 77, 28);
             transition: all 0.4s ease;
             overflow: hidden;
         }
 
         .location {
             text-align: center;
-            padding-top: 3rem;
+            padding-top: 25px;
         }
 
         .adw {
@@ -629,6 +624,7 @@
                 width: 85vw;
             }
             .footer {
+                height: 75vh;
                 padding: 30px;
             }
             #tag {
@@ -650,8 +646,8 @@
                 font-size: 1.8rem;
             }
             .sdot {
-                width: 45px;
-                height: 45px;
+                width: 40px;
+                height: 40px;
             }
             .social {
                 gap: 2rem;
@@ -664,6 +660,10 @@
             }
             .map-section{
                 margin-left: 4px;
+            }
+            .map-frame{
+                width: 70vw;
+                height: 28vh;
             }
         }
 
@@ -1353,9 +1353,6 @@
     <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet">
     <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
         <div class="footer-container">
-           <!-- <div class="logo-footer">
-            <img src="assets/futurzclub.png" style="width: 10vw; height: auto;">
-           </div> -->
 
             <div class="tag-section">
                 <span id="tag">Home.<br>Sweet.<br>Rome.</span>
