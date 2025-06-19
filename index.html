@@ -1119,6 +1119,16 @@
                 .arrow{
                     width: 25px;
                 }
+                .slide img {
+                    max-width: calc(100%);
+                    max-height: calc(100% - 10px);
+                    border-radius: 10px;
+                }
+            }
+            @media screen and (max-width: 400px){
+                .dots{
+                    width: 83vw;
+                }
             }
 
         .transition {
@@ -1492,11 +1502,7 @@
         function currentSlide(index) {
             slideIndex = index - 1;
             showSlide(slideIndex);
-        }
-
-        setInterval(() => {
-            changeSlide(1);
-        }, 5000); //every 5 sec
+        }; //every 5 sec
     </script>
 <footer class="footer">
     <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet">
