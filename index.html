@@ -1502,7 +1502,11 @@
         function currentSlide(index) {
             slideIndex = index - 1;
             showSlide(slideIndex);
-        }; //every 5 sec
+        }
+        setInterval(() => {
+            changeSlide(1);
+        }, 5000);
+         //every 5 sec
     </script>
 <footer class="footer">
     <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet">
