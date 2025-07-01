@@ -729,7 +729,7 @@
                 }
 
                 .size-40 {
-                    font-size: 8.5vw;
+                    font-size: 40px !important;
                     overflow-y: hidden;
                 }
 
@@ -1208,10 +1208,18 @@
         <img src="assets/lgo.png"/>
         <p class="tag">Home. Sweet. Rome.</p>
         <div class="buttons">
-            <button>Brochure</button>
-            <button>Trailer</button>
+            <button onclick="openthis()">Brochure</button>
+            <button onclick="openthat()">Trailer</button>
         </div>
         </div>
+        <script>
+            function openthis(){
+                window.open('https://bit.ly/z3nith25brochure');
+            }
+            function openthat(){
+                window.open('https://youtu.be/7e607U3iDzg');
+            }
+        </script>
     </section>
 <div class="transition"></div>
     <section class="countdown">
@@ -1381,7 +1389,7 @@
             <div class="card">
                 <div id="details">
                     <div class="event-name right" id="vor">Visions of Rome</div>
-                    <div class="detail"><span style="font-style: italic;">A Digital Renaissance. <br><br>Hybrid - Team of 3</span></div>
+                    <div class="detail"><span style="font-style: italic;">A Digital Renaissance. <br><br>Hybrid - Team of 2</span></div>
                 </div>
                 <img src="assets/event2.png">
             </div>
