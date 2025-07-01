@@ -429,6 +429,9 @@
             position: relative;
         }
         .carousel {
+            display: flex;
+            align-items: center;
+            justify-content: center;
             background:rgba(48, 38, 28, 0.8);
             box-shadow: 0 0 20px rgba(0, 0, 0);
             backdrop-filter: blur(5px);
@@ -443,7 +446,7 @@
         }
         .slide {
             display: none;
-            width: 100%;
+            width: 95%;
             height: 100%;
             align-items: center;
             justify-content: center;
@@ -454,7 +457,7 @@
         }
 
         .slide img {
-            max-width: calc(100% - 70px);
+            width: 100%;
             max-height: calc(100% - 40px);
             border-radius: 10px;
         }
@@ -491,6 +494,8 @@
             bottom: 10%;
             left: 50%;
             transform: translateX(-50%);
+            display: flex;
+            justify-content: space-between;
         }
         .dot {
             display: inline-block;
@@ -1114,6 +1119,7 @@
                 }
                 .dot {
                     width: 10px;
+                    height: 10px;
                 }
                 .carousel{
                     width: 85vw;
