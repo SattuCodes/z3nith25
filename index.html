@@ -1259,80 +1259,6 @@
         </script>
 
         <script type="module" src="script.js"></script>
-
-        <div class="countdown">
-        <div class="time-unit">
-            <span id="days">x</span>
-            <div class="label">days</div>
-        </div>
-        <div class="colon">:</div>
-        <div class="time-unit">
-            <span id="hours">x</span>
-            <div class="label">hours</div>
-        </div>
-        <div class="colon">:</div>
-        <div class="time-unit">
-            <span id="minutes">x</span>
-            <div class="label">minutes</div>
-        </div>
-        <div class="colon">:</div>
-        <div class="time-unit">
-            <span id="seconds">x</span>
-            <div class="label">seconds</div>
-        </div>
-        </div>
-
-        <script>
-        const zenithOpening = new Date('Jul 25, 2025 00:00:00');
-        setInterval(() => {
-            setCountdown(zenithOpening);
-        }, 1000);
-
-        function toRoman(num) {
-            const romanMap = [
-            { val: 1000, sym: 'M' },
-            { val: 900, sym: 'CM' },
-            { val: 500, sym: 'D' },
-            { val: 400, sym: 'CD' },
-            { val: 100, sym: 'C' },
-            { val: 90, sym: 'XC' },
-            { val: 50, sym: 'L' },
-            { val: 40, sym: 'XL' },
-            { val: 10, sym: 'X' },
-            { val: 9, sym: 'IX' },
-            { val: 5, sym: 'V' },
-            { val: 4, sym: 'IV' },
-            { val: 1, sym: 'I' }
-            ];
-
-            let result = '';
-            for (const { val, sym } of romanMap) {
-            while (num >= val) {
-                result += sym;
-                num -= val;
-            }
-            }
-            return result || '0';
-        }
-
-        function setCountdown(countingDownTime) {
-            let now = new Date();
-            let timeRemaining = countingDownTime - now;
-            let seconds = Math.floor(timeRemaining / 1000);
-            let minutes = Math.floor(timeRemaining / (1000 * 60));
-            let hours = Math.floor(timeRemaining / (1000 * 60 * 60));
-            let days = Math.floor(timeRemaining / (1000 * 60 * 60 * 24));
-            let daysToDisplay = days;
-            let hoursToDisplay = hours - (days * 24);
-            let minutesToDisplay = minutes - (hours * 60);
-            let secondsToDisplay = seconds - (minutes * 60);
-
-            document.getElementById('days').textContent = toRoman(daysToDisplay);
-            document.getElementById('hours').textContent = toRoman(hoursToDisplay);
-            document.getElementById('minutes').textContent = toRoman(minutesToDisplay);
-            document.getElementById('seconds').textContent = toRoman(secondsToDisplay);
-        }
-        </script>
     </section>
     <div class="transition-2"></div>
     <section class="write-section">
@@ -1573,3 +1499,4 @@
     </footer>
     </body>
 </html>
+
